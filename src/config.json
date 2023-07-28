@@ -1,0 +1,6 @@
+{
+    "nav": {
+        "logo" : "https://i.ibb.co/tZWdhWD/logo.png",
+        "links" : [["Home", "/"], ["About", "#about"], ["Portfolio","#portfolio"], ["Contact","#contact"]]
+    }
+}
