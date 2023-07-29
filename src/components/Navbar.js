@@ -1,16 +1,16 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
     const links = props.nav.links.map((link, index) => <li key={index} className="nav-item">
-        <a className="nav-link active" aria-current="page" href={link[1]}>{link[0]}</a>
+        <a className="nav-link active" aria-current="page" href={link['url']}>{link['name']}</a>
     </li>);
+    
     return (
         <div>
-            <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+            <nav className={props.darkMode ? "navbar sticky-top navbar-expand-lg bg-dark border-bottom" : "navbar sticky-top navbar-expand-lg bg-body-tertiary"} data-bs-theme={props.darkMode ? "dark" : ""}>
                 <div className="container">
                     <a className="navbar-brand" href="/">
-                        <img className='rounded' src={props.nav.logo} alt="Bootstrap" width="40" height="40" />
+                        <i className={props.darkMode ? `border border-white rounded p-3 fa-solid fa-${props.nav.logo}` : `border border-black rounded p-3 fa-solid fa-${props.nav.logo}`}></i>
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -19,6 +19,9 @@ export default function Navbar(props) {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             {links}
                         </ul>
+                        <div className="d-flex p-2">
+                            {props.darkMode ? <i role='button' onClick={() => props.setDarkMode(false)} className="fa-solid fa-sun fa-lg" style={{ color: '#fff' }}></i> : <i role='button' onClick={() => props.setDarkMode(true)} className="fa-solid fa-moon fa-lg cursor-pointer"></i>}
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -26,8 +29,13 @@ export default function Navbar(props) {
     )
 }
 Navbar.propTypes = {
+    darkMode : PropTypes.bool.isRequired,
+    setDarkMode : PropTypes.func.isRequired,
     nav: PropTypes.shape({
         logo: PropTypes.string.isRequired,
-        links: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string.isRequired).isRequired).isRequired
+        links: PropTypes.arrayOf(PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired
+        })).isRequired
     }).isRequired
 }

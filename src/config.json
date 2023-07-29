@@ -1,6 +1,23 @@
 {
     "nav": {
-        "logo" : "https://i.ibb.co/tZWdhWD/logo.png",
-        "links" : [["Home", "/"], ["About", "#about"], ["Portfolio","#portfolio"], ["Contact","#contact"]]
+        "logo": "r",
+        "links": [
+            {
+                "name": "Home",
+                "url": "/"
+            },
+            {
+                "name": "About",
+                "url": "#about"
+            },
+            {
+                "name": "Portfolio",
+                "url": "#portfolio"
+            },
+            {
+                "name": "Contact",
+                "url": "#contact"
+            }
+        ]
     }
 }
