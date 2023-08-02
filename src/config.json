@@ -1,23 +1,31 @@
 {
-    "nav": {
-        "logo": "r",
-        "links": [
-            {
-                "name": "Home",
-                "url": "/"
-            },
-            {
-                "name": "About",
-                "url": "#about"
-            },
-            {
-                "name": "Portfolio",
-                "url": "#portfolio"
-            },
-            {
-                "name": "Contact",
-                "url": "#contact"
-            }
-        ]
+    "website": {
+        "user": {
+            "name": "Ritwick Raj Makhal"
+        },
+        "nav": {
+            "logo": "r",
+            "links": [
+                {
+                    "name": "Home",
+                    "url": "/"
+                },
+                {
+                    "name": "About",
+                    "url": "#about"
+                },
+                {
+                    "name": "Portfolio",
+                    "url": "#portfolio"
+                },
+                {
+                    "name": "Contact",
+                    "url": "#contact"
+                }
+            ]
+        },
+        "home":{
+            "imgUrl" : "https://i.ibb.co/dQ71RgR/indomay32.png"
+        }
     }
 }

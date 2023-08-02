@@ -7,7 +7,7 @@ export default function Navbar(props) {
     
     return (
         <div>
-            <nav className={props.darkMode ? "navbar sticky-top navbar-expand-lg bg-dark border-bottom" : "navbar sticky-top navbar-expand-lg bg-body-tertiary"} data-bs-theme={props.darkMode ? "dark" : ""}>
+            <nav className={props.darkMode ? "navbar sticky-top navbar-expand-lg dark" : "navbar sticky-top navbar-expand-lg light"} data-bs-theme={props.darkMode ? "dark" : ""}>
                 <div className="container">
                     <a className="navbar-brand" href="/">
                         <i className={props.darkMode ? `border border-white rounded p-3 fa-solid fa-${props.nav.logo}` : `border border-black rounded p-3 fa-solid fa-${props.nav.logo}`}></i>
