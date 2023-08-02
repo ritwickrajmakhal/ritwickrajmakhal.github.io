@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import data from './config.json'
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} nav={data.website.nav} />
+      <Home darkMode={darkMode} home={{name : data.website.user.name, imgUrl : data.website.home.imgUrl}}/>
     </div>
   );
 }
