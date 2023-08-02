@@ -1,7 +1,21 @@
 {
     "website": {
         "user": {
-            "name": "Ritwick Raj Makhal"
+            "name": "Ritwick Raj Makhal",
+            "metaData": [
+                {
+                    "name": "description",
+                    "content": "Portfolio Website | Computer Science and Engineering (CSE) Student | Ritwick Raj Makhal"
+                },
+                {
+                    "name": "keywords",
+                    "content": "Computer Science, Engineering, CSE, Portfolio, Projects, Programming, [Your Key Skills]"
+                },
+                {
+                    "name": "author",
+                    "content": "Ritwick Raj Makhal"
+                }
+            ]
         },
         "nav": {
             "logo": "r",
@@ -24,8 +38,8 @@
                 }
             ]
         },
-        "home":{
-            "imgUrl" : "https://i.ibb.co/dQ71RgR/indomay32.png"
+        "home": {
+            "imgUrl": "https://i.ibb.co/dQ71RgR/indomay32.png"
         }
     }
 }
