@@ -57,6 +57,16 @@
                     "CSS",
                     "Python"
                 ]
+            },
+            {
+                "imgUrl": "https://i.ibb.co/kqy3N1w/food-recepie-search.png",
+                "title": "Online Music Player",
+                "desc": "An interactive and user-friendly online music player platform that allows seamless streaming o",
+                "techs": [
+                    "HTML",
+                    "CSS",
+                    "Python"
+                ]
             }
         ]
     }
