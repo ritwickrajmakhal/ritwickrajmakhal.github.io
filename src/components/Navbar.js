@@ -4,7 +4,7 @@ export default function Navbar(props) {
     const links = props.nav.links.map((link, index) => <li key={index} className="nav-item">
         <a className="nav-link active" aria-current="page" href={link['url']}>{link['name']}</a>
     </li>);
-    
+
     return (
         <div>
             <nav className={props.darkMode ? "navbar sticky-top navbar-expand-lg dark" : "navbar sticky-top navbar-expand-lg light"} data-bs-theme={props.darkMode ? "dark" : ""}>
@@ -29,8 +29,8 @@ export default function Navbar(props) {
     )
 }
 Navbar.propTypes = {
-    darkMode : PropTypes.bool.isRequired,
-    setDarkMode : PropTypes.func.isRequired,
+    darkMode: PropTypes.bool.isRequired,
+    setDarkMode: PropTypes.func.isRequired,
     nav: PropTypes.shape({
         logo: PropTypes.string.isRequired,
         links: PropTypes.arrayOf(PropTypes.shape({

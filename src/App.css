@@ -33,3 +33,11 @@
         transform: translateY(-10px);
     }
 }
+
+.scale-on-hover {
+    transition: all 0.3s ease;
+}
+
+.scale-on-hover:hover {
+    transform: scale(1.1);
+}

@@ -20,7 +20,7 @@ export default function Home(props) {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <a role={'button'} className={props.darkMode ? 'btn btn-medium border my-5 dark text-bg-dark' : 'btn btn-medium border-black my-5 light text-bg-light'} href="">Download Resume</a>
+                        <a role={'button'} className={props.darkMode ? 'btn btn-medium border my-5 dark text-bg-dark' : 'btn btn-medium border-black my-5 light text-bg-light'} href="/">Download Resume</a>
                     </div>
                 </div>
             </div>

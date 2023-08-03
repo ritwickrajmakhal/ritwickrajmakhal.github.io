@@ -26,6 +26,38 @@
         },
         "home": {
             "imgUrl": "https://i.ibb.co/h2ghywS/indomay32.png"
-        }
+        },
+        "portfolios": [
+            {
+                "imgUrl": "https://i.ibb.co/wNJQjqS/png-20230722-012100-0000.png",
+                "title": "Online Music Player",
+                "desc": "An interactive and user-friendly online music player platform that allows seamless streaming of",
+                "techs": [
+                    "HTML",
+                    "CSS",
+                    "Js"
+                ]
+            },
+            {
+                "imgUrl": "https://i.ibb.co/gSGKfLf/Untitled-design.png",
+                "title": "Desktop Music Player",
+                "desc": "An interactive and user-friendly online music player platform that allows seamless streaming of",
+                "techs": [
+                    "HTML",
+                    "CSS",
+                    "React"
+                ]
+            },
+            {
+                "imgUrl": "https://i.ibb.co/g35FwbY/Text-Utils.png",
+                "title": "Online Music Player",
+                "desc": "An interactive and user-friendly online music player platform that allows seamless streaming o",
+                "techs": [
+                    "HTML",
+                    "CSS",
+                    "Python"
+                ]
+            }
+        ]
     }
 }
