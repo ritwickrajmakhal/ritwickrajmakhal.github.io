@@ -1,7 +1,46 @@
 {
     "website": {
         "user": {
-            "name": "Ritwick Raj Makhal"
+            "name": "Ritwick Raj Makhal",
+            "shortDesc": "Hi, I'm Ritwick Raj Makhal, a Full Stack Web and Android Developer 🚀",
+            "desc": "I have been Programming since I was 13 years old. I can Build apps for Android and Windows and I know languages like Python, Javascript, Typescript and Java very well. I can also design secure, fast and responsive websites with ReactJS 🔥 and Develop Custom Roms for android.",
+            "imgUrl": "https://i.ibb.co/cQ671m4/profile.jpg",
+            "socialHandles": [
+                {
+                    "logo": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+                    "profile": "https://github.com/ritwickrajmakhal/"
+                },
+                {
+                    "logo": "https://i.ibb.co/K6mqsxK/facebook.png",
+                    "profile": "https://github.com/ritwickrajmakhal/"
+                },
+                {
+                    "logo": "https://i.ibb.co/SszSKgg/download.png",
+                    "profile": "https://github.com/ritwickrajmakhal/"
+                },
+                {
+                    "logo": "https://i.ibb.co/P6KYRsG/gmail.jpg",
+                    "profile": "https://github.com/ritwickrajmakhal/"
+                }
+            ],
+            "skills" : [
+                {
+                    "name" : "HTML",
+                    "value" : 100
+                },
+                {
+                    "name" : "HTML",
+                    "value" : 100
+                },
+                {
+                    "name" : "HTML",
+                    "value" : 100
+                },
+                {
+                    "name" : "HTML",
+                    "value" : 100
+                }
+            ]
         },
         "nav": {
             "logo": "r",
@@ -24,12 +63,9 @@
                 }
             ]
         },
-        "home": {
-            "imgUrl": "https://i.ibb.co/h2ghywS/indomay32.png"
-        },
         "portfolios": [
             {
-                "imgUrl": "https://i.ibb.co/wNJQjqS/png-20230722-012100-0000.png",
+                "imgUrl": "https://i.ibb.co/71xyv6M/online-music-player.png",
                 "title": "Online Music Player",
                 "desc": "An interactive and user-friendly online music player platform that allows seamless streaming of",
                 "techs": [
@@ -39,7 +75,7 @@
                 ]
             },
             {
-                "imgUrl": "https://i.ibb.co/gSGKfLf/Untitled-design.png",
+                "imgUrl": "https://i.ibb.co/Wgw8fkN/desktop-music-player.png",
                 "title": "Desktop Music Player",
                 "desc": "An interactive and user-friendly online music player platform that allows seamless streaming of",
                 "techs": [
@@ -49,8 +85,8 @@
                 ]
             },
             {
-                "imgUrl": "https://i.ibb.co/g35FwbY/Text-Utils.png",
-                "title": "Online Music Player",
+                "imgUrl": "https://i.ibb.co/3NFw8fK/food-recepie-search.png",
+                "title": "Food Recipe Search",
                 "desc": "An interactive and user-friendly online music player platform that allows seamless streaming o",
                 "techs": [
                     "HTML",
@@ -59,8 +95,8 @@
                 ]
             },
             {
-                "imgUrl": "https://i.ibb.co/kqy3N1w/food-recepie-search.png",
-                "title": "Online Music Player",
+                "imgUrl": "https://i.ibb.co/gmcFS9w/Text-Utils.png",
+                "title": "Text Utility",
                 "desc": "An interactive and user-friendly online music player platform that allows seamless streaming o",
                 "techs": [
                     "HTML",

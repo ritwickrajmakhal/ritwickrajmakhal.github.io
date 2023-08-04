@@ -2,6 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export default function Home(props) {
+    const socialHandles = props.home.socialHandles.slice(0, 4).map((socialHandle, index) => (
+        <a target={'_blank'} rel="noreferrer" key={index} href={socialHandle.profile}>
+            <img className='img-fluid shadow rounded-circle border p-1' style={{ width: '6rem', height: '6rem' }} src={socialHandle.logo} alt="" />
+        </a>
+    ));
     return (
         <div className={props.darkMode ? 'dark text-bg-dark' : 'light text-bg-light'}>
             <div className="container" >
@@ -15,7 +20,9 @@ export default function Home(props) {
                 </div>
                 <div className="row justify-content-end">
                     <div className="col-sm-5">
-                        <img className='img-fluid lifting-element' src={props.home.imgUrl} alt="" />
+                        <div className="rotate border mx-auto rounded-circle" style={{ width: '12.13rem' }}>
+                            {socialHandles}
+                        </div>
                     </div>
                 </div>
                 <div className="row">
@@ -32,6 +39,9 @@ Home.propTypes = {
     darkMode: PropTypes.bool.isRequired,
     home: PropTypes.shape({
         name: PropTypes.string.isRequired,
-        imgUrl: PropTypes.string.isRequired
+        socialHandles: PropTypes.arrayOf(PropTypes.shape({
+            logo: PropTypes.string.isRequired,
+            profile: PropTypes.string.isRequired
+        }).isRequired).isRequired
     }).isRequired
 }

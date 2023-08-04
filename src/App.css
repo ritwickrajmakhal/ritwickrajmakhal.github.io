@@ -17,20 +17,18 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.lifting-element {
+.rotate {
     position: relative;
-    animation: liftUpDown 4s infinite alternate;
+    animation: rotateAnimation 30s linear infinite;
 }
 
-@keyframes liftUpDown {
-
-    0%,
-    100% {
-        transform: translateY(0);
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
     }
 
-    50% {
-        transform: translateY(-10px);
+    to {
+        transform: rotate(360deg);
     }
 }
 
