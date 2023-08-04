@@ -12,33 +12,25 @@
                 },
                 {
                     "logo": "https://i.ibb.co/K6mqsxK/facebook.png",
-                    "profile": "https://github.com/ritwickrajmakhal/"
+                    "profile": "https://facebook.com/ritwickrajmakhal"
                 },
                 {
-                    "logo": "https://i.ibb.co/SszSKgg/download.png",
-                    "profile": "https://github.com/ritwickrajmakhal/"
+                    "logo": "https://i.ibb.co/SszSKgg/linkedin.png",
+                    "profile": "https://www.linkedin.com/in/ritwick-raj-makhal-017a10217"
                 },
                 {
                     "logo": "https://i.ibb.co/P6KYRsG/gmail.jpg",
-                    "profile": "https://github.com/ritwickrajmakhal/"
+                    "profile": "ritwickrajmakhal11@gmail.com"
                 }
             ],
             "skills" : [
                 {
-                    "name" : "HTML",
-                    "value" : 100
+                    "name" : "MERN Stack",
+                    "value" : 50
                 },
                 {
-                    "name" : "HTML",
-                    "value" : 100
-                },
-                {
-                    "name" : "HTML",
-                    "value" : 100
-                },
-                {
-                    "name" : "HTML",
-                    "value" : 100
+                    "name" : "Python",
+                    "value" : 70
                 }
             ]
         },

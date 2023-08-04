@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 
 export default function Home(props) {
     const socialHandles = props.home.socialHandles.slice(0, 4).map((socialHandle, index) => (
-        <a target={'_blank'} rel="noreferrer" key={index} href={socialHandle.profile}>
+        <a target={'_blank'} rel="noreferrer" key={index}
+            href={socialHandle.profile.endsWith("@gmail.com") ? "mailto:" + socialHandle.profile : socialHandle.profile}>
             <img className='img-fluid shadow rounded-circle border p-1' style={{ width: '6rem', height: '6rem' }} src={socialHandle.logo} alt="" />
         </a>
     ));
@@ -20,7 +21,7 @@ export default function Home(props) {
                 </div>
                 <div className="row justify-content-end">
                     <div className="col-sm-5">
-                        <div className="rotate border mx-auto rounded-circle" style={{ width: '12.13rem' }}>
+                        <div className="rotate border mx-auto rounded-circle" style={{ width: '12.13rem'}}>
                             {socialHandles}
                         </div>
                     </div>

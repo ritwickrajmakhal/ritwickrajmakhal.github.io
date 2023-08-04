@@ -20,8 +20,11 @@
 .rotate {
     position: relative;
     animation: rotateAnimation 30s linear infinite;
+    transition: animation 0.3s ease;
 }
-
+.rotate:hover{
+    animation-play-state: paused;
+}
 @keyframes rotateAnimation {
     from {
         transform: rotate(0deg);

@@ -8,8 +8,8 @@ export default function About(props) {
     )
     return (
         <div id="about" className={props.darkMode ? 'dark text-bg-dark' : 'light text-bg-light'}>
-            <div className="container">
-                <h1 className='text-center py-4'>About Me</h1>
+            <div className="container py-5 ">
+                <h1 className='text-center py-2'>About Me</h1>
                 <div className={props.darkMode ? 'card rounded-3 shadow m-auto p-2 dark text-bg-dark' : 'card rounded-3 shadow m-auto p-2 light text-bg-light'} style={{ maxWidth: '740px' }}>
                     <div className="row g-0">
                         <div className="col-md-4">
@@ -22,7 +22,7 @@ export default function About(props) {
                             </div>
                         </div>
                     </div>
-                    <h4 className='text-center'>Skills</h4>
+                    <h4 className='text-center'>Major Skills</h4>
                     {progresses}
                 </div>
 
