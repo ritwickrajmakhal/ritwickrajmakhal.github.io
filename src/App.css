@@ -17,22 +17,32 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.rotate {
-    position: relative;
-    animation: rotateAnimation 30s linear infinite;
-    transition: animation 0.3s ease;
-}
-.rotate:hover{
-    animation-play-state: paused;
-}
-@keyframes rotateAnimation {
-    from {
+@keyframes rotateClockwise {
+    0% {
         transform: rotate(0deg);
     }
 
-    to {
+    100% {
         transform: rotate(360deg);
     }
+}
+
+@keyframes rotateAntiClockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.rotate-clockwise {
+    animation: rotateClockwise 30s infinite linear;
+}
+
+.rotate-anticlockwise {
+    animation: rotateAntiClockwise 30s infinite linear;
 }
 
 .scale-on-hover {
