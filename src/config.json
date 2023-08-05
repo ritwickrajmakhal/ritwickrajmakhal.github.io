@@ -23,14 +23,14 @@
                     "profile": "ritwickrajmakhal11@gmail.com"
                 }
             ],
-            "skills" : [
+            "skills": [
                 {
-                    "name" : "MERN Stack",
-                    "value" : 50
+                    "name": "MERN Stack",
+                    "value": 50
                 },
                 {
-                    "name" : "Python",
-                    "value" : 70
+                    "name": "Python",
+                    "value": 70
                 }
             ]
         },
@@ -59,42 +59,46 @@
             {
                 "imgUrl": "https://i.ibb.co/71xyv6M/online-music-player.png",
                 "title": "Online Music Player",
-                "desc": "An interactive and user-friendly online music player platform that allows seamless streaming of",
+                "desc": "An interactive online music player platform offering a vast library of songs for seamless streaming.",
                 "techs": [
                     "HTML",
                     "CSS",
-                    "Js"
-                ]
+                    "Js",
+                    "RapidAPI"
+                ],
+                "iframeUrl": "https://ritwickrajmakhal.github.io/online-music-player/"
             },
             {
                 "imgUrl": "https://i.ibb.co/Wgw8fkN/desktop-music-player.png",
                 "title": "Desktop Music Player",
-                "desc": "An interactive and user-friendly online music player platform that allows seamless streaming of",
+                "desc": "A sleek and intuitive application for organizing and enjoying your favorite tunes with seamless playback and customizable features.",
                 "techs": [
-                    "HTML",
-                    "CSS",
-                    "React"
-                ]
+                    "Python",
+                    "Tkinter",
+                    "pygame mixer"
+                ],
+                "iframeUrl": "https://i.ibb.co/CQxFkhV/offline-music-player-demo.png"
             },
             {
                 "imgUrl": "https://i.ibb.co/3NFw8fK/food-recepie-search.png",
                 "title": "Food Recipe Search",
-                "desc": "An interactive and user-friendly online music player platform that allows seamless streaming o",
+                "desc": "Your ultimate culinary companion - a Food Recipe Search website bringing you a world of delightful dishes at your fingertips.",
                 "techs": [
-                    "HTML",
-                    "CSS",
-                    "Python"
-                ]
+                    "React",
+                    "Bootstrap",
+                    "Edamam API"
+                ],
+                "iframeUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/"
             },
             {
                 "imgUrl": "https://i.ibb.co/gmcFS9w/Text-Utils.png",
                 "title": "Text Utility",
-                "desc": "An interactive and user-friendly online music player platform that allows seamless streaming o",
+                "desc": "Streamline and enhance your text with our all-in-one Text Utility website - simplifying tasks from formatting to analysis.",
                 "techs": [
-                    "HTML",
-                    "CSS",
-                    "Python"
-                ]
+                    "React",
+                    "Bootstrap"
+                ],
+                "iframeUrl": "https://ritwickrajmakhal.github.io/TextUtils/"
             }
         ]
     }

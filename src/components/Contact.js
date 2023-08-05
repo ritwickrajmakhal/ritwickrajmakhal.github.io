@@ -25,7 +25,7 @@ export default function Contact(props) {
                             <ValidationError prefix="Email" field="email" errors={state.errors} />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="exampleFormControlTextarea1" className="form-label">Example textarea</label>
+                            <label htmlFor="exampleFormControlTextarea1" className="form-label">Message</label>
                             <textarea name="message" className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             <ValidationError prefix="Message" field="message" errors={state.errors} />
                         </div>

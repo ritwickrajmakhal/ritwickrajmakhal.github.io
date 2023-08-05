@@ -3,7 +3,19 @@ import PropTypes from 'prop-types'
 import Card from './Card'
 
 export default function Portfolio(props) {
-    const portfolios = props.portfolios.map((portfolio, index) => <Card darkMode={props.darkMode} key={index} imgUrl={portfolio.imgUrl} title={portfolio.title} desc={portfolio.desc} footer={portfolio.techs.map((tech, index) => <span key={index} className="badge rounded-pill text-bg-primary" style={{ letterSpacing: '0.2rem' }}>{tech}</span>)} />)
+    const portfolios = props.portfolios.map((portfolio, index) =>
+        <Card
+            darkMode={props.darkMode}
+            key={index}
+            card={portfolio}
+            footer={portfolio.techs.map((tech, index) => <span key={index} className="badge rounded-pill text-bg-primary" style={{ letterSpacing: '0.2rem' }}>{tech}</span>)}
+            setModalContent={props.setModalContent}
+            modalContent={{
+                title: portfolio.title,
+                content: <iframe style={{ height: '100%', width: '100%' }} src={portfolio.iframeUrl} title={portfolio.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            }}
+        />
+    )
     return (
         <div id='portfolio' className={props.darkMode ? 'dark text-bg-dark' : 'light text-bg-light'}>
             <div className="container">
