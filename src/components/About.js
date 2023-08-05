@@ -8,24 +8,21 @@ export default function About(props) {
     )
     return (
         <div id="about" className={props.darkMode ? 'dark text-bg-dark' : 'light text-bg-light'}>
-            <div className="container py-5 ">
-                <h1 className='text-center py-2'>About Me</h1>
-                <div className={props.darkMode ? 'card rounded-3 shadow m-auto p-2 dark text-bg-dark' : 'card rounded-3 shadow m-auto p-2 light text-bg-light'} style={{ maxWidth: '740px' }}>
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            <img src={props.about.imgUrl} className="img-fluid img-thumbnail" alt="..." />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title fw-bold">{props.about.shortDesc}</h5>
-                                <p className="card-text fs-5">{props.about.desc}</p>
-                            </div>
+            <h1 className='text-center py-3'>About Me</h1>
+            <div className={props.darkMode ? 'card rounded-3 shadow m-auto p-2 dark text-bg-dark' : 'card rounded-3 shadow m-auto p-2 light text-bg-light'} style={{ maxWidth: '740px' }}>
+                <div className="row g-0">
+                    <div className="col-md-4">
+                        <img src={props.about.imgUrl} className="img-fluid img-thumbnail" alt="..." />
+                    </div>
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <h5 className="card-title fw-bold">{props.about.shortDesc}</h5>
+                            <p className="card-text fs-5">{props.about.desc}</p>
                         </div>
                     </div>
-                    <h4 className='text-center'>Major Skills</h4>
-                    {progresses}
                 </div>
-
+                <h4 className='text-center'>Major Skills</h4>
+                {progresses}
             </div>
         </div>
     )

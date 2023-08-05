@@ -6,9 +6,9 @@ export default function Portfolio(props) {
     const portfolios = props.portfolios.map((portfolio, index) => <Card darkMode={props.darkMode} key={index} imgUrl={portfolio.imgUrl} title={portfolio.title} desc={portfolio.desc} footer={portfolio.techs.map((tech, index) => <span key={index} className="badge rounded-pill text-bg-primary" style={{ letterSpacing: '0.2rem' }}>{tech}</span>)} />)
     return (
         <div id='portfolio' className={props.darkMode ? 'dark text-bg-dark' : 'light text-bg-light'}>
-            <div className="container margin-auto">
+            <div className="container">
                 <h1 className='text-center'>Portfolio</h1>
-                <div className="d-flex flex-wrap justify-content-center">
+                <div className="d-flex flex-wrap justify-content-center pb-3">
                     {portfolios}
                 </div>
             </div>

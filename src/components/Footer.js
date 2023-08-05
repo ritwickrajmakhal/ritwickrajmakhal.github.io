@@ -5,7 +5,7 @@ export default function Footer(props) {
     return (
         <div className={props.darkMode ? 'dark text-bg-dark' : 'light text-bg-light'}>
             <div className="container-fluid border-top py-2">
-                <p className='text-center fs-5 my-2'>© {new Date().getFullYear()} <a class="link-opacity-100-hover text" href="/">{props.footer.name}</a>. All Rights Reserved</p>
+                <p className='text-center fs-5 my-2'>© {new Date().getFullYear()} <a className="link-opacity-100-hover text" href="/">{props.footer.name}</a>. All Rights Reserved</p>
             </div>
         </div>
     )
