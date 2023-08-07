@@ -12,7 +12,7 @@ export default function About(props) {
             <div className={props.darkMode ? 'card rounded-3 shadow m-auto p-2 dark text-bg-dark' : 'card rounded-3 shadow m-auto p-2 light text-bg-light'} style={{ maxWidth: '740px' }}>
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src={props.about.imgUrl} className="img-fluid img-thumbnail" alt="..." />
+                        <img src={props.about.imgUrl} className="img-fluid img-thumbnail" alt={props.about.name} />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
