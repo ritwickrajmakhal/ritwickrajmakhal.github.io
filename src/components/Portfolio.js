@@ -12,7 +12,7 @@ export default function Portfolio(props) {
             setModalContent={props.setModalContent}
             modalContent={{
                 title: portfolio.title,
-                content: <iframe style={{ height: '100%', width: '100%' }} src={portfolio.iframeUrl} title={portfolio.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                content: <iframe onLoad={() => props.setIframeLoaded(true)} style={{ height: '100%', width: '100%' }} src={portfolio.iframeUrl} title={portfolio.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             }}
         />
     )

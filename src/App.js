@@ -11,20 +11,45 @@ import Modal from './components/Modal';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false)
   const [modalContent, setModalContent] = useState({ title: "", content: "" });
 
   return (
     <div className="App">
-      <Modal darkMode={darkMode} modalContent={modalContent} setModalContent={setModalContent} />
+      <Modal
+        darkMode={darkMode}
+        iframeLoaded={iframeLoaded}
+        setIframeLoaded={setIframeLoaded}
+        modalContent={modalContent}
+        setModalContent={setModalContent}
+      />
       <a href='#home' className='px-2 py-1 text-light m-3 rounded-circle border' style={{ position: 'fixed', bottom: '0px', right: '0px', zIndex: 9900 }}>
         <i className="fa-solid fa-arrow-up"></i>
       </a>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} nav={data.website.nav} />
-      <Home darkMode={darkMode} home={{ name: data.website.user.name, socialHandles: data.website.user.socialHandles }} />
-      <Portfolio darkMode={darkMode} setModalContent={setModalContent} portfolios={data.website.portfolios} />
-      <About darkMode={darkMode} about={data.website.user} />
-      <Contact darkMode={darkMode} />
-      <Footer darkMode={darkMode} footer={data.website.user} />
+      <Navbar
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        nav={data.website.nav} />
+      <Home
+        darkMode={darkMode}
+        home={{
+          name: data.website.user.name,
+          socialHandles: data.website.user.socialHandles
+        }} />
+      <Portfolio
+        darkMode={darkMode}
+        setModalContent={setModalContent}
+        setIframeLoaded={setIframeLoaded}
+        portfolios={data.website.portfolios}
+      />
+      <About
+        darkMode={darkMode}
+        about={data.website.user} />
+      <Contact
+        darkMode={darkMode} />
+      <Footer
+        darkMode={darkMode}
+        footer={data.website.user} />
     </div>
   );
 }
