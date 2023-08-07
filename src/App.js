@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Modal darkMode={darkMode} modalContent={modalContent} setModalContent={setModalContent} />
-      <a href='#home' className='px-2 py-1 text-light m-3 rounded-circle border' style={{ position: 'fixed', bottom: '0px', right: '0px', zIndex: 9999 }}>
+      <a href='#home' className='px-2 py-1 text-light m-3 rounded-circle border' style={{ position: 'fixed', bottom: '0px', right: '0px', zIndex: 9900 }}>
         <i className="fa-solid fa-arrow-up"></i>
       </a>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} nav={data.website.nav} />

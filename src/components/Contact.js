@@ -16,12 +16,12 @@ export default function Contact(props) {
                         <input name="subject" value="Portfolio Website Contact" hidden disabled />
                         <div className="mb-3">
                             <label htmlFor="exampleFormControlInput1" className="form-label">Name</label>
-                            <input type="text" name="name" className="form-control" id="exampleFormControlInput1" placeholder="Ritwick Raj Makhal" />
+                            <input type="text" name="name" className="form-control" id="exampleFormControlInput1" placeholder="Ritwick Raj Makhal" required/>
                             <ValidationError prefix="Name" field="name" errors={state.errors} />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
-                            <input type="email" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                            <input type="email" name="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required/>
                             <ValidationError prefix="Email" field="email" errors={state.errors} />
                         </div>
                         <div className="mb-3">
