@@ -39,7 +39,7 @@ export default function About(props) {
           </div>
         </div>
         <h4 className="text-center">Major Skills</h4>
-        {progresses}
+        <div className="row">{progresses}</div>
       </div>
     </div>
   );
