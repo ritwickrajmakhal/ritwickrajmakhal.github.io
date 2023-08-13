@@ -1,13 +1,14 @@
 import "./App.css";
 import { useState } from "react";
 import data from "./config.json";
+import Modal from "./components/Modal";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
-import Footer from "./components/Footer";
+import Education from "./components/Education";
 import Contact from "./components/Contact";
-import Modal from "./components/Modal";
+import Footer from "./components/Footer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* The Modal component is rendered here */}
       <Modal
         darkMode={darkMode}
         iframeLoaded={iframeLoaded}
@@ -30,11 +32,13 @@ function App() {
       >
         <i className="fa-solid fa-arrow-up"></i>
       </a>
+      {/* The Navbar component is rendered here */}
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         nav={data.website.nav}
       />
+      {/* The Home component is rendered here */}
       <Home
         darkMode={darkMode}
         home={{
@@ -42,14 +46,20 @@ function App() {
           socialHandles: data.website.user.socialHandles,
         }}
       />
+      {/* The Portfolio component is rendered here */}
       <Portfolio
         darkMode={darkMode}
         setModalContent={setModalContent}
         setIframeLoaded={setIframeLoaded}
         portfolios={data.website.portfolios}
       />
+      {/* The About component is rendered here */}
       <About darkMode={darkMode} about={data.website.user} />
+      {/* The Education component is rendered here */}
+      <Education darkMode={darkMode} education={data.website.user.education} />
+      {/* The Contact component is rendered here */}
       <Contact darkMode={darkMode} />
+      {/* The Footer component is rendered here */}
       <Footer darkMode={darkMode} footer={data.website.user} />
     </div>
   );

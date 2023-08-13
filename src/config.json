@@ -5,6 +5,13 @@
             "shortDesc": "Hi, I'm Ritwick Raj Makhal, a Full Stack Web and Android Developer 🚀",
             "desc": "I have been Programming since I was 16 years old. I can Build apps for Android and Windows and I know languages like Python, Javascript, Typescript and Java very well. I can also design secure, fast and responsive websites with ReactJS 🔥 and Develop Custom Roms for android.",
             "imgUrl": "https://i.ibb.co/cQ671m4/profile.jpg",
+            "education":[
+                {
+                    "instituteName" : "Calcutta Institute of Technology",
+                    "imageUrl" : "https://i.ibb.co/tphcphV/cit.jpg",
+                    "desc": "B.Tech. Computer Science and Engineering (2021 - Present)"
+                }
+            ],
             "socialHandles": [
                 {
                     "logo": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
@@ -50,6 +57,10 @@
                     "url": "#portfolio"
                 },
                 {
+                    "name" : "Education",
+                    "url" : "#education"
+                },
+                {
                     "name": "Contact",
                     "url": "#contact"
                 }
@@ -66,7 +77,8 @@
                     "Js",
                     "RapidAPI"
                 ],
-                "iframeUrl": "https://ritwickrajmakhal.github.io/online-music-player/"
+                "iframeUrl": "https://ritwickrajmakhal.github.io/online-music-player/",
+                "categories" : ["WEB DEVELOPMENT", "API"]
             },
             {
                 "imgUrl": "https://i.ibb.co/Wgw8fkN/desktop-music-player.png",
@@ -77,7 +89,8 @@
                     "Tkinter",
                     "pygame mixer"
                 ],
-                "iframeUrl": "https://i.ibb.co/CQxFkhV/offline-music-player-demo.png"
+                "iframeUrl": "https://i.ibb.co/CQxFkhV/offline-music-player-demo.png",
+                "categories" : ["DESKTOP DEVELOPMENT"]
             },
             {
                 "imgUrl": "https://i.ibb.co/3NFw8fK/food-recepie-search.png",
@@ -88,7 +101,8 @@
                     "Bootstrap",
                     "Edamam API"
                 ],
-                "iframeUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/"
+                "iframeUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
+                "categories" : ["WEB DEVELOPMENT", "API"]
             },
             {
                 "imgUrl": "https://i.ibb.co/gmcFS9w/Text-Utils.png",
@@ -98,7 +112,8 @@
                     "React",
                     "Bootstrap"
                 ],
-                "iframeUrl": "https://ritwickrajmakhal.github.io/TextUtils/"
+                "iframeUrl": "https://ritwickrajmakhal.github.io/TextUtils/",
+                "categories":["WEB DEVELOPMENT"]
             }
         ]
     }

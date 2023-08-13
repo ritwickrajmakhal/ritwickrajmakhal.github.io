@@ -3,23 +3,28 @@ import PropTypes from "prop-types";
 import Card from "./Card";
 
 export default function Portfolio(props) {
+  // Get all the categories from the portfolios
   const categories = new Set();
   props.portfolios.forEach((portfolio) =>
-    portfolio.techs.forEach((tech) => categories.add(tech))
+    portfolio.categories.forEach((category) => categories.add(category))
   );
   const [selectedCategory, setSelectedCategory] = useState("ALL");
 
   const portfolios = props.portfolios.map((portfolio, index) => {
+    // If the portfolio has the selected category or the selected category is "ALL"
     if (
-      portfolio.techs.includes(selectedCategory) ||
+      portfolio.categories.includes(selectedCategory) ||
       selectedCategory === "ALL"
     ) {
       return (
+        // Pass the portfolio object as the card prop
         <Card
+          animate={true}
           darkMode={props.darkMode}
           key={index}
           card={portfolio}
           footer={portfolio.techs.map((tech, index) => (
+            // Map through the techs array and return a badge for each tech
             <span
               key={index}
               className="badge rounded-pill text-bg-primary"
@@ -29,6 +34,7 @@ export default function Portfolio(props) {
             </span>
           ))}
           setModalContent={props.setModalContent}
+          // Pass the portfolio object as the modalContent prop
           modalContent={{
             title: portfolio.title,
             content: (
@@ -57,6 +63,7 @@ export default function Portfolio(props) {
       <div className="container">
         <h1 className="text-center">Portfolio</h1>
         <div className="d-flex justify-content-sm-evenly py-2 overflow-auto">
+          {/* Create a badge for the selected category */}
           <span
             role="button"
             onClick={() => setSelectedCategory("ALL")}
@@ -69,6 +76,7 @@ export default function Portfolio(props) {
           >
             ALL
           </span>
+          {/* Loop through the categories and create a badge for each category */}
           {Array.from(categories).map((category, index) => (
             <span
               role="button"
@@ -86,12 +94,14 @@ export default function Portfolio(props) {
           ))}
         </div>
         <div className="d-flex flex-wrap justify-content-center pb-3">
+          {/* Render the portfolios */}
           {portfolios}
         </div>
       </div>
     </div>
   );
 }
+// Define the prop types
 Portfolio.propTypes = {
   darkMode: PropTypes.bool.isRequired,
   portfolios: PropTypes.arrayOf(

@@ -9,7 +9,7 @@ export default function Card(props) {
   }, []);
   return (
     <div
-      data-aos="fade-up"
+      data-aos={props.animate ? "fade-up" : ""}
       data-aos-duration="1000"
       className={
         props.darkMode
@@ -21,14 +21,18 @@ export default function Card(props) {
     >
       <img
         src={props.card.imgUrl}
-        className="card-img-top scale-on-hover img-fluid"
+        className={props.animate ? "card-img-top rounded-top-3 scale-on-hover img-fluid" : "card-img-top rounded-top-3 img-fluid"}
         alt={props.title}
       />
       <div className="card-body">
         <h2 className="card-title">{props.card.title}</h2>
         <p className="card-text fs-5">{props.card.desc}</p>
       </div>
-      <div className="card-footer">
+      <div
+        className={
+          props.footer.length === 0 ? "card-footer d-none" : "card-footer"
+        }
+      >
         <div className="d-flex justify-content-around mb-3">{props.footer}</div>
         <p
           data-bs-toggle="modal"
