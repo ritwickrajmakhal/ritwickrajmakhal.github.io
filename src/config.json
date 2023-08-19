@@ -78,7 +78,7 @@
                     "RapidAPI"
                 ],
                 "iframeUrl": "https://ritwickrajmakhal.github.io/online-music-player/",
-                "categories" : ["WEB DEVELOPMENT", "API"]
+                "categories" : ["WEB DEVELOPMENT", "REST API"]
             },
             {
                 "imgUrl": "https://i.ibb.co/Wgw8fkN/desktop-music-player.png",
@@ -102,7 +102,7 @@
                     "Edamam API"
                 ],
                 "iframeUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
-                "categories" : ["WEB DEVELOPMENT", "API"]
+                "categories" : ["WEB DEVELOPMENT", "REST API"]
             },
             {
                 "imgUrl": "https://i.ibb.co/gmcFS9w/Text-Utils.png",
