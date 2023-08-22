@@ -18,8 +18,8 @@ export default function About(props) {
       <div
         className={
           props.darkMode
-            ? "card rounded-3 shadow m-auto p-2 dark text-bg-dark"
-            : "card rounded-3 shadow m-auto p-2 light text-bg-light"
+            ? "card rounded-3 shadow m-auto p-3 dark text-bg-dark"
+            : "card rounded-3 shadow m-auto p-3 light text-bg-light"
         }
         style={{ maxWidth: "740px" }}
       >

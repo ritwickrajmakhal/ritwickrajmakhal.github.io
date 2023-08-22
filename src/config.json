@@ -114,6 +114,17 @@
                 ],
                 "iframeUrl": "https://ritwickrajmakhal.github.io/TextUtils/",
                 "categories":["WEB DEVELOPMENT"]
+            },
+            {
+                "imgUrl": "https://i.ibb.co/BLg9zDW/weather-app.png",
+                "title": "Weather App",
+                "desc": "Your go-to Android app for quick and reliable weather updates, helping you stay prepared wherever you go.",
+                "techs": [
+                    "Android",
+                    "OpenWeatherMap API"
+                ],
+                "iframeUrl": "https://i.ibb.co/BLg9zDW/weather-app.png",
+                "categories":["ANDROID DEVELOPMENT", "REST API"]
             }
         ]
     }
