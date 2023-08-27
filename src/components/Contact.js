@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 export default function Contact(props) {
-  const [state, handleSubmit] = useForm("mdoravon");
+  const [state, handleSubmit] = useForm(props.apiKey);
   return (
     <div
       id="contact"

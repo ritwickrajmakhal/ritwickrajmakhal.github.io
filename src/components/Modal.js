@@ -18,17 +18,18 @@ export default function Modal(props) {
               : "modal-content light text-bg-light"
           }
         >
-          <div className="modal-header py-2">
+          <div className="modal-header py-2 border-0">
             <h1 className="modal-title fs-5" id="exampleModalLabel">
-              {props.modalContent.title}
+              {props.modal.title}
             </h1>
             <button
               type="button"
               className="btn-close bg-light"
               data-bs-dismiss="modal"
               onClick={() => {
-                props.setModalContent({ title: "", content: "" });
                 props.setIframeLoaded(false);
+                props.setModal({title: null, tab: null})
+                props.setModalBody(null)
               }}
               aria-label="Close"
             ></button>
@@ -36,29 +37,31 @@ export default function Modal(props) {
           <div
             className="modal-body p-1 overflow-hidden"
             style={{ height: "707px" }}
-          >
+            >
+            {props.modal.tab}
             {!props.iframeLoaded && (
               <div
-                className="bg-light"
-                style={{
-                  height: "100%",
-                  width: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+              className="bg-light"
+              style={{
+                height: "100%",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
               >
                 <img className="img-fluid" src={preloader} alt="loader" />
               </div>
             )}
-            {props.modalContent.content}
+            {props.modalBody}
           </div>
           <div className="modal-footer p-1">
             <button
               type="button"
               onClick={() => {
-                props.setModalContent({ title: "", content: "" });
                 props.setIframeLoaded(false);
+                props.setModal({title: null, tab: null})
+                props.setModalBody(null)
               }}
               className="btn btn-secondary"
               data-bs-dismiss="modal"

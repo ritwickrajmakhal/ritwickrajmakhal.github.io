@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "./Card";
+import Tab from "./Tab";
 
 export default function Portfolio(props) {
   // Get all the categories from the portfolios
@@ -9,7 +10,6 @@ export default function Portfolio(props) {
     portfolio.categories.forEach((category) => categories.add(category))
   );
   const [selectedCategory, setSelectedCategory] = useState("ALL");
-
   const portfolios = props.portfolios.map((portfolio, index) => {
     // If the portfolio has the selected category or the selected category is "ALL"
     if (
@@ -33,21 +33,68 @@ export default function Portfolio(props) {
               {tech}
             </span>
           ))}
-          setModalContent={props.setModalContent}
+          setModal={props.setModal}
           // Pass the portfolio object as the modalContent prop
-          modalContent={{
+          modal={{
             title: portfolio.title,
-            content: (
-              <iframe
-                onLoad={() => props.setIframeLoaded(true)}
-                style={{ height: "100%", width: "100%" }}
-                src={portfolio.iframeUrl}
-                title={portfolio.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+            tab: (
+              <Tab
+                handleTabClick={(tab) => props.setModalBody(tab.modalBody)}
+                activeTab={{
+                  name: "Demo",
+                  modalBody: (
+                    <iframe
+                      onLoad={() => props.setIframeLoaded(true)}
+                      style={{ height: "100%", width: "100%" }}
+                      src={portfolio.iframeUrl}
+                      title={portfolio.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  ),
+                }}
+                tabs={[
+                  {
+                    name: "Demo",
+                    modalBody: (
+                      <iframe
+                        onLoad={() => props.setIframeLoaded(true)}
+                        style={{ height: "100%", width: "100%" }}
+                        src={portfolio.iframeUrl}
+                        title={portfolio.title}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      ></iframe>
+                    ),
+                  },
+                  {
+                    name: "Download",
+                    modalBody: (
+                      <div
+                        className="d-flex align-items-center justify-content-center"
+                        style={{ height: "100%", width: "100%" }}
+                      >
+                        <a href={portfolio.downloadUrl} className="btn btn-primary">
+                        {portfolio.downloadUrl ? "Click Here to Download" : "Project Download Unavailable"}
+                        </a>
+                      </div>
+                    ),
+                  },
+                ]}
+              />
             ),
           }}
+          setModalBody={props.setModalBody}
+          modalBody={
+            <iframe
+              onLoad={() => props.setIframeLoaded(true)}
+              style={{ height: "100%", width: "100%" }}
+              src={portfolio.iframeUrl}
+              title={portfolio.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          }
         />
       );
     } else {

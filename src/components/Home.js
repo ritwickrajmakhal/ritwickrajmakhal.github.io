@@ -55,7 +55,7 @@ export default function Home(props) {
                   ? "btn btn-medium border my-5 dark text-bg-dark"
                   : "btn btn-medium border-black my-5 light text-bg-light"
               }
-              href="/"
+              href={props.home.resume}
             >
               Download Resume
             </a>
@@ -76,5 +76,6 @@ Home.propTypes = {
         profile: PropTypes.string.isRequired,
       }).isRequired
     ).isRequired,
+    resume : PropTypes.string.isRequired
   }).isRequired,
 };

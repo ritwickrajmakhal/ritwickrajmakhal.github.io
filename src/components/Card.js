@@ -21,29 +21,39 @@ export default function Card(props) {
     >
       <img
         src={props.card.imgUrl}
-        className={props.animate ? "card-img-top rounded-top-3 scale-on-hover img-fluid" : "card-img-top rounded-top-3 img-fluid"}
+        className={
+          props.animate
+            ? "card-img-top rounded-top-3 scale-on-hover img-fluid"
+            : "card-img-top rounded-top-3 img-fluid"
+        }
         alt={props.title}
       />
       <div className="card-body">
         <h2 className="card-title">{props.card.title}</h2>
         <p className="card-text fs-5">{props.card.desc}</p>
       </div>
-      <div
-        className={
-          props.footer.length === 0 ? "card-footer d-none" : "card-footer"
-        }
-      >
-        <div className="d-flex justify-content-around mb-3">{props.footer}</div>
-        <p
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          role={"button"}
-          onClick={() => props.setModalContent(props.modalContent)}
-          className="card-text text-center text-bg-primary rounded-bottom-4"
-        >
-          <u>Find out more</u>
-        </p>
-      </div>
+      {
+        /* If the footer prop is not empty, render the footer */
+        props.footer.length !== 0 ? (
+          <div className="card-footer">
+            <div className="d-flex justify-content-around mb-3">
+              {props.footer}
+            </div>
+            <p
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              role={"button"}
+              onClick={() => {
+                props.setModal(props.modal);
+                props.setModalBody(props.modalBody);
+              }}
+              className="card-text text-center text-bg-primary rounded-bottom-4"
+            >
+              <u>Find out more</u>
+            </p>
+          </div>
+        ) : null
+      }
     </div>
   );
 }

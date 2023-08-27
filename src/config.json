@@ -39,7 +39,8 @@
                     "name": "Python",
                     "value": 70
                 }
-            ]
+            ],
+            "resume" : ""
         },
         "nav": {
             "logo": "r",
@@ -78,6 +79,7 @@
                     "RapidAPI"
                 ],
                 "iframeUrl": "https://ritwickrajmakhal.github.io/online-music-player/",
+                "downloadUrl": "https://github.com/ritwickrajmakhal/online-music-player/archive/refs/heads/master.zip",
                 "categories" : ["WEB DEVELOPMENT", "REST API"]
             },
             {
@@ -90,6 +92,7 @@
                     "pygame mixer"
                 ],
                 "iframeUrl": "https://i.ibb.co/CQxFkhV/offline-music-player-demo.png",
+                "downloadUrl": null,
                 "categories" : ["DESKTOP DEVELOPMENT"]
             },
             {
@@ -102,6 +105,7 @@
                     "Edamam API"
                 ],
                 "iframeUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
+                "downloadUrl": "https://github.com/ritwickrajmakhal/food-recipe-search/archive/refs/heads/gh-pages.zip",
                 "categories" : ["WEB DEVELOPMENT", "REST API"]
             },
             {
@@ -113,6 +117,7 @@
                     "Bootstrap"
                 ],
                 "iframeUrl": "https://ritwickrajmakhal.github.io/TextUtils/",
+                "downloadUrl": "https://github.com/ritwickrajmakhal/TextUtils/archive/refs/heads/gh-pages.zip",
                 "categories":["WEB DEVELOPMENT"]
             },
             {
@@ -124,8 +129,12 @@
                     "OpenWeatherMap API"
                 ],
                 "iframeUrl": "https://i.ibb.co/BLg9zDW/weather-app.png",
+                "downloadUrl": null,
                 "categories":["ANDROID DEVELOPMENT", "REST API"]
             }
-        ]
+        ],
+        "apis":{
+            "formspree" : "xpzgdkye"
+        }
     }
 }
