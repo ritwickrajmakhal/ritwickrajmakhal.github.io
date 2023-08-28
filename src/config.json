@@ -79,7 +79,7 @@
                     "RapidAPI"
                 ],
                 "iframeUrl": "https://ritwickrajmakhal.github.io/online-music-player/",
-                "downloadUrl": "https://github.com/ritwickrajmakhal/online-music-player/archive/refs/heads/master.zip",
+                "downloadUrl": null,
                 "categories" : ["WEB DEVELOPMENT", "REST API"]
             },
             {
@@ -105,7 +105,7 @@
                     "Edamam API"
                 ],
                 "iframeUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
-                "downloadUrl": "https://github.com/ritwickrajmakhal/food-recipe-search/archive/refs/heads/gh-pages.zip",
+                "downloadUrl": null,
                 "categories" : ["WEB DEVELOPMENT", "REST API"]
             },
             {
@@ -117,7 +117,7 @@
                     "Bootstrap"
                 ],
                 "iframeUrl": "https://ritwickrajmakhal.github.io/TextUtils/",
-                "downloadUrl": "https://github.com/ritwickrajmakhal/TextUtils/archive/refs/heads/gh-pages.zip",
+                "downloadUrl": null,
                 "categories":["WEB DEVELOPMENT"]
             },
             {
