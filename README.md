@@ -119,3 +119,6 @@
         "formspree": "Create a formspree account and create a form then add your form key here. example: https://formspree.io/f/your-form-key",
       }
       ```
+1. Now create a github repository with name `username.github.io` where `username` is your github username.
+1. Now open the project folder in terminal and run `npm run deploy` to deploy the project to github pages.
+1. Now open your github page url in browser and see your portfolio website live.
