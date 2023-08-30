@@ -5,102 +5,14 @@ import Tab from "./Tab";
 
 export default function Portfolio(props) {
   // Get all the categories from the portfolios
+  const [portfolios, setPortfolios] = useState(props.portfolios);
+
   const categories = new Set();
   props.portfolios.forEach((portfolio) =>
     portfolio.categories.forEach((category) => categories.add(category))
   );
   const [selectedCategory, setSelectedCategory] = useState("ALL");
-  const portfolios = props.portfolios.map((portfolio, index) => {
-    // If the portfolio has the selected category or the selected category is "ALL"
-    if (
-      portfolio.categories.includes(selectedCategory) ||
-      selectedCategory === "ALL"
-    ) {
-      return (
-        // Pass the portfolio object as the card prop
-        <Card
-          animate={true}
-          darkMode={props.darkMode}
-          key={index}
-          card={portfolio}
-          footer={portfolio.techs.map((tech, index) => (
-            // Map through the techs array and return a badge for each tech
-            <span
-              key={index}
-              className="badge rounded-pill text-bg-primary"
-              style={{ letterSpacing: "0.2rem" }}
-            >
-              {tech}
-            </span>
-          ))}
-          setModal={props.setModal}
-          // Pass the portfolio object as the modalContent prop
-          modal={{
-            title: portfolio.title,
-            tab: (
-              <Tab
-                handleTabClick={(tab) => props.setModalBody(tab.modalBody)}
-                activeTab={{
-                  name: "Demo",
-                  modalBody: (
-                    <iframe
-                      onLoad={() => props.setIframeLoaded(true)}
-                      style={{ height: "100%", width: "100%" }}
-                      src={portfolio.iframeUrl}
-                      title={portfolio.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  ),
-                }}
-                tabs={[
-                  {
-                    name: "Demo",
-                    modalBody: (
-                      <iframe
-                        onLoad={() => props.setIframeLoaded(true)}
-                        style={{ height: "100%", width: "100%" }}
-                        src={portfolio.iframeUrl}
-                        title={portfolio.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                      ></iframe>
-                    ),
-                  },
-                  {
-                    name: "Download",
-                    modalBody: (
-                      <div
-                        className="d-flex align-items-center justify-content-center"
-                        style={{ height: "100%", width: "100%" }}
-                      >
-                        <a href={portfolio.downloadUrl} className="btn btn-primary">
-                        {portfolio.downloadUrl ? "Click Here to Download" : "Project Download Unavailable"}
-                        </a>
-                      </div>
-                    ),
-                  },
-                ]}
-              />
-            ),
-          }}
-          setModalBody={props.setModalBody}
-          modalBody={
-            <iframe
-              onLoad={() => props.setIframeLoaded(true)}
-              style={{ height: "100%", width: "100%" }}
-              src={portfolio.iframeUrl}
-              title={portfolio.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          }
-        />
-      );
-    } else {
-      return null;
-    }
-  });
+  const [pageNo, setPageNo] = useState(0);
 
   return (
     <div
@@ -113,7 +25,11 @@ export default function Portfolio(props) {
           {/* Create a badge for the selected category */}
           <span
             role="button"
-            onClick={() => setSelectedCategory("ALL")}
+            onClick={() => {
+              setSelectedCategory("ALL");
+              setPortfolios(props.portfolios);
+              setPageNo(0);
+            }}
             className={
               selectedCategory === "ALL"
                 ? "badge rounded-pill text-bg-primary mx-2"
@@ -127,7 +43,15 @@ export default function Portfolio(props) {
           {Array.from(categories).map((category, index) => (
             <span
               role="button"
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => {
+                setSelectedCategory(category);
+                setPortfolios(
+                  props.portfolios.filter((portfolio) =>
+                    portfolio.categories.includes(category)
+                  )
+                );
+                setPageNo(0);
+              }}
               key={index}
               className={
                 selectedCategory === category
@@ -140,9 +64,119 @@ export default function Portfolio(props) {
             </span>
           ))}
         </div>
-        <div className="d-flex flex-wrap justify-content-center pb-3">
+        <div className="d-flex flex-wrap justify-content-center mb-3">
           {/* Render the portfolios */}
-          {portfolios}
+          {portfolios
+            .map((portfolio, index) => (
+              <Card
+                animate={true}
+                darkMode={props.darkMode}
+                key={index}
+                card={portfolio}
+                footer={portfolio.techs.map((tech, index) => (
+                  // Map through the techs array and return a badge for each tech
+                  <span
+                    key={index}
+                    className="badge rounded-pill text-bg-primary"
+                    style={{ letterSpacing: "0.2rem" }}
+                  >
+                    {tech}
+                  </span>
+                ))}
+                setModal={props.setModal}
+                // Pass the portfolio object as the modalContent prop
+                modal={{
+                  title: portfolio.title,
+                  tab: (
+                    <Tab
+                      handleTabClick={(tab) =>
+                        props.setModalBody(tab.modalBody)
+                      }
+                      activeTab={{
+                        name: "Demo",
+                        modalBody: (
+                          <iframe
+                            onLoad={() => props.setIframeLoaded(true)}
+                            style={{ height: "100%", width: "100%" }}
+                            src={portfolio.iframeUrl}
+                            title={portfolio.title}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          ></iframe>
+                        ),
+                      }}
+                      tabs={[
+                        {
+                          name: "Demo",
+                          modalBody: (
+                            <iframe
+                              onLoad={() => props.setIframeLoaded(true)}
+                              style={{ height: "100%", width: "100%" }}
+                              src={portfolio.iframeUrl}
+                              title={portfolio.title}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowFullScreen
+                            ></iframe>
+                          ),
+                        },
+                        {
+                          name: "Download",
+                          modalBody: (
+                            <div
+                              className="d-flex align-items-center justify-content-center"
+                              style={{ height: "100%", width: "100%" }}
+                            >
+                              <a
+                                href={portfolio.downloadUrl}
+                                className="btn btn-primary"
+                              >
+                                {portfolio.downloadUrl
+                                  ? "Click Here to Download"
+                                  : "Project Download Unavailable"}
+                              </a>
+                            </div>
+                          ),
+                        },
+                      ]}
+                    />
+                  ),
+                }}
+                setModalBody={props.setModalBody}
+                modalBody={
+                  <iframe
+                    onLoad={() => props.setIframeLoaded(true)}
+                    style={{ height: "100%", width: "100%" }}
+                    src={portfolio.iframeUrl}
+                    title={portfolio.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                }
+              />
+            ))
+            .slice(pageNo, pageNo + 3)}
+        </div>
+        <div className="d-flex justify-content-between">
+          <button
+            onClick={() =>
+              pageNo === 0 ? setPageNo(pageNo) : setPageNo(pageNo - 3)
+            }
+            className={
+              props.darkMode ? "btn btn-outline-light" : "btn btn-outline-dark"
+            }
+          >
+            <i className="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            onClick={() =>
+              pageNo >= portfolios.length - 3 ? setPageNo(pageNo) : setPageNo(pageNo + 3)
+            }
+            className={
+              props.darkMode ? "btn btn-outline-light" : "btn btn-outline-dark"
+            }
+          >
+            <i className="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </div>
     </div>

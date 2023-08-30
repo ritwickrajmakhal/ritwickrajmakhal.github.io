@@ -7,6 +7,11 @@
             "imgUrl": "https://i.ibb.co/cQ671m4/profile.jpg",
             "education":[
                 {
+                    "instituteName" : "Khalna Rai Radha Gobinda Institution",
+                    "imageUrl" : "https://i.ibb.co/wSdYpQH/krrgi.jpg",
+                    "desc": "Passed class 10th (2019) with 74.42% marks Passed class 12th-Sc (2021) with 82% marks"
+                },
+                {
                     "instituteName" : "Calcutta Institute of Technology",
                     "imageUrl" : "https://i.ibb.co/tphcphV/cit.jpg",
                     "desc": "B.Tech. Computer Science and Engineering (2021 - Present)"
@@ -129,7 +134,7 @@
                     "OpenWeatherMap API"
                 ],
                 "iframeUrl": "https://i.ibb.co/BLg9zDW/weather-app.png",
-                "downloadUrl": null,
+                "downloadUrl": "https://github.com/ritwickrajmakhal/portfolio-blob-storage/raw/main/projects/weather-app.apk",
                 "categories":["ANDROID DEVELOPMENT", "REST API"]
             }
         ],
