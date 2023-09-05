@@ -73,84 +73,133 @@ export default function Portfolio(props) {
                 darkMode={props.darkMode}
                 key={index}
                 card={portfolio}
-                footer={portfolio.techs.map((tech, index) => (
-                  // Map through the techs array and return a badge for each tech
-                  <span
-                    key={index}
-                    className="badge rounded-pill text-bg-primary"
-                    style={{ letterSpacing: "0.2rem" }}
-                  >
-                    {tech}
-                  </span>
-                ))}
-                setModal={props.setModal}
-                // Pass the portfolio object as the modalContent prop
-                modal={{
-                  title: portfolio.title,
-                  tab: (
-                    <Tab
-                      handleTabClick={(tab) =>
-                        props.setModalBody(tab.modalBody)
-                      }
-                      activeTab={{
-                        name: "Demo",
-                        modalBody: (
-                          <iframe
-                            onLoad={() => props.setIframeLoaded(true)}
-                            style={{ height: "100%", width: "100%" }}
-                            src={portfolio.iframeUrl}
-                            title={portfolio.title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                          ></iframe>
-                        ),
-                      }}
-                      tabs={[
-                        {
-                          name: "Demo",
-                          modalBody: (
+                footer={
+                  <div className="card-footer">
+                    <div className="d-flex justify-content-around mb-3">
+                      {portfolio.techs.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="badge rounded-pill text-bg-primary"
+                          style={{ letterSpacing: "0.2rem" }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <p
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                      role={"button"}
+                      onClick={() => {
+                        props.setModal({
+                          title: portfolio.title,
+                          tab: (
+                            <Tab
+                              handleTabClick={(tab) =>
+                                props.setModalBody(tab.modalBody)
+                              }
+                              activeTab={{
+                                name: "Demo",
+                                modalBody: portfolio.demoUrl ? (
+                                  <iframe
+                                    onLoad={() => props.setIframeLoaded(true)}
+                                    style={{ height: "94%", width: "100%" }}
+                                    src={portfolio.demoUrl}
+                                    title={portfolio.title}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                  ></iframe>
+                                ) : (
+                                  <div
+                                    onLoad={props.setIframeLoaded(true)}
+                                    className="d-flex align-items-center justify-content-center"
+                                    style={{ height: "100%", width: "100%" }}
+                                  >
+                                    <button className="btn btn-primary">
+                                      Demonstration Unavailable
+                                    </button>
+                                  </div>
+                                ),
+                              }}
+                              tabs={[
+                                {
+                                  name: "Demo",
+                                  modalBody: portfolio.demoUrl ? (
+                                    <iframe
+                                      onLoad={() => props.setIframeLoaded(true)}
+                                      style={{ height: "94%", width: "100%" }}
+                                      src={portfolio.demoUrl}
+                                      title={portfolio.title}
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                      allowFullScreen
+                                    ></iframe>
+                                  ) : (
+                                    <div
+                                      onLoad={props.setIframeLoaded(true)}
+                                      className="d-flex align-items-center justify-content-center"
+                                      style={{
+                                        height: "100%",
+                                        width: "100%",
+                                      }}
+                                    >
+                                      <button className="btn btn-primary">
+                                        Demonstration Unavailable
+                                      </button>
+                                    </div>
+                                  ),
+                                },
+                                {
+                                  name: "Download",
+                                  modalBody: (
+                                    <div
+                                      className="d-flex align-items-center justify-content-center"
+                                      style={{ height: "100%", width: "100%" }}
+                                    >
+                                      <a
+                                        href={portfolio.downloadUrl}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="btn btn-primary"
+                                      >
+                                        {portfolio.downloadUrl
+                                          ? "Click Here to Download"
+                                          : "Project Download Unavailable"}
+                                      </a>
+                                    </div>
+                                  ),
+                                },
+                              ]}
+                            />
+                          ),
+                        });
+                        props.setModalBody(
+                          portfolio.demoUrl ? (
                             <iframe
                               onLoad={() => props.setIframeLoaded(true)}
-                              style={{ height: "100%", width: "100%" }}
-                              src={portfolio.iframeUrl}
+                              style={{ height: "94%", width: "100%" }}
+                              src={portfolio.demoUrl}
                               title={portfolio.title}
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                               allowFullScreen
                             ></iframe>
-                          ),
-                        },
-                        {
-                          name: "Download",
-                          modalBody: (
+                          ) : (
                             <div
+                              onLoad={props.setIframeLoaded(true)}
                               className="d-flex align-items-center justify-content-center"
                               style={{ height: "100%", width: "100%" }}
                             >
-                              <a
-                                href={portfolio.downloadUrl}
-                                className="btn btn-primary"
-                              >
-                                {portfolio.downloadUrl
-                                  ? "Click Here to Download"
-                                  : "Project Download Unavailable"}
-                              </a>
+                              <button className="btn btn-primary">
+                                Demonstration Unavailable
+                              </button>
                             </div>
-                          ),
-                        },
-                      ]}
-                    />
-                  ),
-                }}
-                setModalBody={props.setModalBody}
-                modalBody={
-                  <iframe
-                    onLoad={() => props.setIframeLoaded(true)}
-                    style={{ height: "100%", width: "100%" }}
-                    src={portfolio.iframeUrl}
-                    title={portfolio.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
+                          )
+                        );
+                      }}
+                      className="card-text text-center text-bg-primary rounded-bottom-4"
+                    >
+                      <u>Find out more</u>
+                    </p>
+                  </div>
                 }
               />
             ))
@@ -164,16 +213,20 @@ export default function Portfolio(props) {
             className={
               props.darkMode ? "btn btn-outline-light" : "btn btn-outline-dark"
             }
+            disabled={pageNo === 0}
           >
             <i className="fa-solid fa-arrow-left"></i>
           </button>
           <button
             onClick={() =>
-              pageNo >= portfolios.length - 3 ? setPageNo(pageNo) : setPageNo(pageNo + 3)
+              pageNo >= portfolios.length - 3
+                ? setPageNo(pageNo)
+                : setPageNo(pageNo + 3)
             }
             className={
               props.darkMode ? "btn btn-outline-light" : "btn btn-outline-dark"
             }
+            disabled={pageNo >= portfolios.length - 3}
           >
             <i className="fa-solid fa-arrow-right"></i>
           </button>

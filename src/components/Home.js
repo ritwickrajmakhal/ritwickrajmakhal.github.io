@@ -48,17 +48,30 @@ export default function Home(props) {
         </div>
         <div className="row">
           <div className="col">
-            <a
-              role={"button"}
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
               className={
                 props.darkMode
                   ? "btn btn-medium border my-5 dark text-bg-dark"
                   : "btn btn-medium border-black my-5 light text-bg-light"
               }
-              href={props.home.resume}
+              onClick={() => {
+                props.setModal({ title: "Resume", tab: null });
+                props.setModalBody(
+                  <iframe
+                    onLoad={() => props.setIframeLoaded(true)}
+                    style={{ height: "100%", width: "100%" }}
+                    src={props.home.resume}
+                    title={"Resume"}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                );
+              }}
             >
-              Download Resume
-            </a>
+              View Resume
+            </button>
           </div>
         </div>
       </div>
@@ -76,6 +89,6 @@ Home.propTypes = {
         profile: PropTypes.string.isRequired,
       }).isRequired
     ).isRequired,
-    resume : PropTypes.string.isRequired
+    resume: PropTypes.string.isRequired,
   }).isRequired,
 };

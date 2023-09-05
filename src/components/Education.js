@@ -12,7 +12,6 @@ export default function Education(props) {
         imgUrl: institute.imageUrl,
         desc: institute.desc,
       }}
-      footer={[]} // No footer
     />
   ));
   return (

@@ -46,15 +46,21 @@ export default function Navbar(props) {
               {props.darkMode ? (
                 <i
                   role="button"
-                  onClick={() => props.setDarkMode(false)}
+                  onClick={() => {
+                    props.setDarkMode(false);
+                    localStorage["darkMode"] = false;
+                  }}
                   className="fa-solid fa-sun fa-lg"
                   style={{ color: "#fff" }}
                 ></i>
               ) : (
                 <i
                   role="button"
-                  onClick={() => props.setDarkMode(true)}
-                  className="fa-solid fa-moon fa-lg cursor-pointer"
+                  onClick={() => {
+                    props.setDarkMode(true);
+                    localStorage["darkMode"] = true;
+                  }}
+                  className="fa-solid fa-moon fa-lg"
                 ></i>
               )}
             </div>

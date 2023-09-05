@@ -28,8 +28,8 @@ export default function Modal(props) {
               data-bs-dismiss="modal"
               onClick={() => {
                 props.setIframeLoaded(false);
-                props.setModal({title: null, tab: null})
-                props.setModalBody(null)
+                props.setModal({ title: null, tab: null });
+                props.setModalBody(null);
               }}
               aria-label="Close"
             ></button>
@@ -37,18 +37,18 @@ export default function Modal(props) {
           <div
             className="modal-body p-1 overflow-hidden"
             style={{ height: "707px" }}
-            >
+          >
             {props.modal.tab}
             {!props.iframeLoaded && (
               <div
-              className="bg-light"
-              style={{
-                height: "100%",
-                width: "100%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
+                className="bg-light"
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
               >
                 <img className="img-fluid" src={preloader} alt="loader" />
               </div>
@@ -56,12 +56,39 @@ export default function Modal(props) {
             {props.modalBody}
           </div>
           <div className="modal-footer p-1">
+            <div
+              class="btn-group-horizontal"
+              role="group"
+              aria-label="Vertical radio toggle button group"
+            >
+              <input
+                type="radio"
+                class="btn-check"
+                name="vbtn-radio"
+                id="vbtn-radio2"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-primary" for="vbtn-radio2">
+                <i class="fa-regular fa-thumbs-up"></i><span> 1</span>
+              </label>
+              <input
+                type="radio"
+                class="btn-check"
+                name="vbtn-radio"
+                id="vbtn-radio3"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-primary" for="vbtn-radio3">
+                <i class="fa-regular fa-thumbs-down"></i><span> 1</span>
+              </label>
+            </div>
+
             <button
               type="button"
               onClick={() => {
                 props.setIframeLoaded(false);
-                props.setModal({title: null, tab: null})
-                props.setModalBody(null)
+                props.setModal({ title: null, tab: null });
+                props.setModalBody(null);
               }}
               className="btn btn-secondary"
               data-bs-dismiss="modal"

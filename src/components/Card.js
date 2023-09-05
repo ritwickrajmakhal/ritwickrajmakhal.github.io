@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import the CSS file for AOS styles
@@ -34,25 +34,7 @@ export default function Card(props) {
       </div>
       {
         /* If the footer prop is not empty, render the footer */
-        props.footer.length !== 0 ? (
-          <div className="card-footer">
-            <div className="d-flex justify-content-around mb-3">
-              {props.footer}
-            </div>
-            <p
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              role={"button"}
-              onClick={() => {
-                props.setModal(props.modal);
-                props.setModalBody(props.modalBody);
-              }}
-              className="card-text text-center text-bg-primary rounded-bottom-4"
-            >
-              <u>Find out more</u>
-            </p>
-          </div>
-        ) : null
+        props.footer ? props.footer : null
       }
     </div>
   );
@@ -65,5 +47,4 @@ Card.propTypes = {
     desc: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired,
   }).isRequired,
-  footer: PropTypes.arrayOf(PropTypes.element),
 };
