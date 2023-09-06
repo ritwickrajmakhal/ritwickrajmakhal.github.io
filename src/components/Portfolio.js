@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "./Card";
 import Tab from "./Tab";
+import LikeDislike from "./LikeDislike";
 
 export default function Portfolio(props) {
   // Get all the categories from the portfolios
@@ -193,6 +194,12 @@ export default function Portfolio(props) {
                               </button>
                             </div>
                           )
+                        );
+                        props.setModalFooter(
+                          <LikeDislike
+                            portfolio_id={portfolio.id}
+                            api={props.LikeDislikeApi}
+                          />
                         );
                       }}
                       className="card-text text-center text-bg-primary rounded-bottom-4"

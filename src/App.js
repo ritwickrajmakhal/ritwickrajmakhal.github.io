@@ -19,6 +19,7 @@ function App() {
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [modal, setModal] = useState({ title: null, tab: null });
   const [modalBody, setModalBody] = useState(null);
+  const [modalFooter, setModalFooter] = useState(null);
   return (
     <div className="App">
       {/* The Modal component is rendered here */}
@@ -29,6 +30,8 @@ function App() {
         modal={modal}
         setModal={setModal}
         modalBody={modalBody}
+        modalFooter={modalFooter}
+        setModalFooter={setModalFooter}
         setModalBody={setModalBody}
       />
               <a
@@ -68,6 +71,8 @@ function App() {
         setModal={setModal}
         setModalBody={setModalBody}
         setIframeLoaded={setIframeLoaded}
+        setModalFooter={setModalFooter}
+        LikeDislikeApi={data.website.apis.likeDislikeApi}
       />
       {/* The About component is rendered here */}
       <About darkMode={darkMode} about={data.website.user} />

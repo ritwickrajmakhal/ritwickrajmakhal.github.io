@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import the CSS file for AOS styles
@@ -13,8 +13,8 @@ export default function Card(props) {
       data-aos-duration="1000"
       className={
         props.darkMode
-          ? "card m-2 p-2 shadow-lg rounded-4 text-light cursor-pointer"
-          : "card m-2 p-1 shadow-lg rounded-4 cursor-pointer"
+          ? "card m-2 p-2 shadow-lg rounded-4 text-light"
+          : "card m-2 p-1 shadow-lg rounded-4"
       }
       style={{ width: "25rem", backgroundColor: "rgba(0,0,0,0.2)" }}
       data-bs-theme={props.darkMode ? "dark" : ""}

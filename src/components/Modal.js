@@ -30,6 +30,7 @@ export default function Modal(props) {
                 props.setIframeLoaded(false);
                 props.setModal({ title: null, tab: null });
                 props.setModalBody(null);
+                props.setModalFooter(null);
               }}
               aria-label="Close"
             ></button>
@@ -55,40 +56,15 @@ export default function Modal(props) {
             )}
             {props.modalBody}
           </div>
-          <div className="modal-footer p-1">
-            <div
-              class="btn-group-horizontal"
-              role="group"
-              aria-label="Vertical radio toggle button group"
-            >
-              <input
-                type="radio"
-                class="btn-check"
-                name="vbtn-radio"
-                id="vbtn-radio2"
-                autocomplete="off"
-              />
-              <label class="btn btn-outline-primary" for="vbtn-radio2">
-                <i class="fa-regular fa-thumbs-up"></i><span> 1</span>
-              </label>
-              <input
-                type="radio"
-                class="btn-check"
-                name="vbtn-radio"
-                id="vbtn-radio3"
-                autocomplete="off"
-              />
-              <label class="btn btn-outline-primary" for="vbtn-radio3">
-                <i class="fa-regular fa-thumbs-down"></i><span> 1</span>
-              </label>
-            </div>
-
+          <div className={`modal-footer p-1 ${props.modalFooter ? 'd-flex justify-content-between' : ''}`}>
+            {props.modalFooter}
             <button
               type="button"
               onClick={() => {
                 props.setIframeLoaded(false);
                 props.setModal({ title: null, tab: null });
                 props.setModalBody(null);
+                props.setModalFooter(null);
               }}
               className="btn btn-secondary"
               data-bs-dismiss="modal"
