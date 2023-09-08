@@ -64,8 +64,8 @@ export default function LikeDislike(props) {
         autoComplete="off"
         checked={liked}
       />
-      <label className="btn btn-outline-success" htmlFor="vbtn-radio2">
-        <i className="fa-regular fa-thumbs-up"></i>
+      <label className={`btn btn-outline-${props.darkMode ? "light" : "primary"}`} htmlFor="vbtn-radio2">
+        <i className={`fa-${liked ? "solid" : "regular"} fa-thumbs-up`}></i>
         <span> {likes}</span>
       </label>
     </div>

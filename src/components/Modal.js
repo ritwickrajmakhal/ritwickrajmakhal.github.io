@@ -24,7 +24,7 @@ export default function Modal(props) {
             </h1>
             <button
               type="button"
-              className="btn-close bg-light"
+              className="btn-close bg-danger"
               data-bs-dismiss="modal"
               onClick={() => {
                 props.setIframeLoaded(false);
@@ -66,7 +66,7 @@ export default function Modal(props) {
                 props.setModalBody(null);
                 props.setModalFooter(null);
               }}
-              className="btn btn-secondary"
+              className="btn btn-danger"
               data-bs-dismiss="modal"
             >
               Close

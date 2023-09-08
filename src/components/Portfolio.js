@@ -196,10 +196,13 @@ export default function Portfolio(props) {
                           )
                         );
                         props.setModalFooter(
-                          <LikeDislike
-                            portfolio_id={portfolio.id}
-                            api={props.LikeDislikeApi}
-                          />
+                          props.LikeDislikeApi ? (
+                            <LikeDislike
+                              darkMode={props.darkMode}
+                              portfolio_id={portfolio.id}
+                              api={props.LikeDislikeApi}
+                            />
+                          ) : null
                         );
                       }}
                       className="card-text text-center text-bg-primary rounded-bottom-4"

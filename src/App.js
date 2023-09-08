@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import data from "./config.json";
 import Modal from "./components/Modal";
 import Navbar from "./components/Navbar";
@@ -9,6 +9,7 @@ import About from "./components/About";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Chatbot from "./components/Chatbot";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
@@ -20,6 +21,29 @@ function App() {
   const [modal, setModal] = useState({ title: null, tab: null });
   const [modalBody, setModalBody] = useState(null);
   const [modalFooter, setModalFooter] = useState(null);
+  const elementRef = useRef(null);
+  const isInHomeComponent = useIsInViewport(elementRef);
+  function useIsInViewport(ref) {
+    const [isIntersecting, setIsIntersecting] = useState(false);
+
+    const observer = useMemo(
+      () =>
+        new IntersectionObserver(([entry]) =>
+          setIsIntersecting(entry.isIntersecting)
+        ),
+      []
+    );
+
+    useEffect(() => {
+      observer.observe(ref.current);
+
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref, observer]);
+
+    return isIntersecting;
+  }
   return (
     <div className="App">
       {/* The Modal component is rendered here */}
@@ -34,20 +58,24 @@ function App() {
         setModalFooter={setModalFooter}
         setModalBody={setModalBody}
       />
-              <a
-          href="#home"
-          className="px-2 py-1 text-light m-3 rounded-circle border"
-          style={{
-            position: "fixed",
-            bottom: "0px",
-            right: "0px",
-            zIndex: 9900,
-          }}
-        >
-          <i className="fa-solid fa-arrow-up"></i>
-        </a>
-            {/* The Navbar component is rendered here */}
+      <div className="m-3 position-fixed bottom-0 end-0 z-3">
+        {data.website.apis.chatbot ? (
+          <Chatbot
+          isInHomeComponent={isInHomeComponent}
+            darkMode={darkMode}
+            image={data.website.user.imgUrl}
+            name={data.website.user.name.split(" ")[0]}
+            chatbotToken={data.website.apis.chatbot}
+          />
+        ) : (
+          <a href="#home" className="p-2 text-light rounded-circle border">
+            <i className="fa-solid fa-arrow-up"></i>
+          </a>
+        )}
+      </div>
+      {/* The Navbar component is rendered here */}
       <Navbar
+        elementRef={elementRef}
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         nav={data.website.nav}

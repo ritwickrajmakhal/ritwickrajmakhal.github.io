@@ -12,6 +12,7 @@ export default function Navbar(props) {
   return (
     <div>
       <nav
+        ref={props.elementRef}
         className={
           props.darkMode
             ? "navbar sticky-top navbar-expand-lg dark"
