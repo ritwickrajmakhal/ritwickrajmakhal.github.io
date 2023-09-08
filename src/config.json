@@ -4,16 +4,16 @@
             "name": "Ritwick Raj Makhal",
             "shortDesc": "Hi, I'm Ritwick Raj Makhal, a Full Stack Web and Android Developer 🚀",
             "desc": "I have been Programming since I was 16 years old. I can Build apps for Android and Windows and I know languages like Python, Javascript, Typescript and Java very well. I can also design secure, fast and responsive websites with ReactJS 🔥 and Develop Custom Roms for android.",
-            "imgUrl": "https://i.ibb.co/cQ671m4/profile.jpg",
+            "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/profile.jpg",
             "education":[
                 {
                     "instituteName" : "Khalna Rai Radha Gobinda Institution",
-                    "imageUrl" : "https://i.ibb.co/wSdYpQH/krrgi.jpg",
+                    "imageUrl" : "https://portfolioblobstorage.blob.core.windows.net/images/krrgi.jpg",
                     "desc": "10th passed (2019) from W.B.B.S.E board, 12th passed (2021) from W.B.C.H.S.E board"
                 },
                 {
                     "instituteName" : "Calcutta Institute of Technology",
-                    "imageUrl" : "https://i.ibb.co/tphcphV/cit.jpg",
+                    "imageUrl" : "https://portfolioblobstorage.blob.core.windows.net/images/cit.jpg",
                     "desc": "B.Tech. Computer Science and Engineering (2021 - Present)"
                 }
             ],
@@ -23,15 +23,15 @@
                     "profile": "https://github.com/ritwickrajmakhal/"
                 },
                 {
-                    "logo": "https://i.ibb.co/K6mqsxK/facebook.png",
+                    "logo": "https://portfolioblobstorage.blob.core.windows.net/images/facebook.png",
                     "profile": "https://facebook.com/ritwickrajmakhal"
                 },
                 {
-                    "logo": "https://i.ibb.co/SszSKgg/linkedin.png",
+                    "logo": "https://portfolioblobstorage.blob.core.windows.net/images/linkedin.png",
                     "profile": "https://www.linkedin.com/in/ritwick-raj-makhal-017a10217"
                 },
                 {
-                    "logo": "https://i.ibb.co/VV7nmXv/gmail.jpg",
+                    "logo": "https://portfolioblobstorage.blob.core.windows.net/images/gmail.jpg",
                     "profile": "ritwickrajmakhal11@gmail.com"
                 }
             ],
@@ -45,7 +45,7 @@
                     "value": 70
                 }
             ],
-            "resume" : ""
+            "resume" : "https://portfolioblobstorage.blob.core.windows.net/pdfs/resume-ritwickrajmakhal.pdf"
         },
         "nav": {
             "logo": "r",
@@ -74,7 +74,8 @@
         },
         "portfolios": [
             {
-                "imgUrl": "https://i.ibb.co/WsG1YWq/meme-share-app.png",
+                "id": "1",
+                "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/meme-share-app.png",
                 "title": "Meme share app",
                 "desc": "An Android app for endless meme entertainment with just a tap, and the ability to easily share your favorite memes.",
                 "techs": [
@@ -82,11 +83,12 @@
                     "Meme API"
                 ],
                 "demoUrl": "",
-                "downloadUrl": "https://github.com/ritwickrajmakhal/portfolio-blob-storage/raw/main/projects/meme-share-app.apk",
+                "downloadUrl": "https://portfolioblobstorage.blob.core.windows.net/projects/meme-share-app.apk",
                 "categories" : ["ANDROID DEVELOPMENT"]
             },
             {
-                "imgUrl": "https://i.ibb.co/K6DbS19/desktop-calculator.png",
+                "id": "2",
+                "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/desktop-calculator.png",
                 "title": "Desktop Calculator",
                 "desc": "A desktop calculator application for quick and efficient mathematical calculations.",
                 "techs": [
@@ -94,11 +96,12 @@
                     "Tkinter"
                 ],
                 "demoUrl": "",
-                "downloadUrl": "https://github.com/ritwickrajmakhal/portfolio-blob-storage/raw/main/projects/desktop-calculator.exe",
+                "downloadUrl": "https://portfolioblobstorage.blob.core.windows.net/projects/desktop-calculator.exe",
                 "categories" : ["DESKTOP DEVELOPMENT"]
             },
             {
-                "imgUrl": "https://i.ibb.co/71xyv6M/online-music-player.png",
+                "id": "3",
+                "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/online-music-player.png",
                 "title": "Online Music Player",
                 "desc": "An interactive online music player platform offering a vast library of songs for seamless streaming.",
                 "techs": [
@@ -112,7 +115,8 @@
                 "categories" : ["WEB DEVELOPMENT", "REST API"]
             },
             {
-                "imgUrl": "https://i.ibb.co/Wgw8fkN/desktop-music-player.png",
+                "id": "4",
+                "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/desktop-music-player.png",
                 "title": "Desktop Music Player",
                 "desc": "A sleek and intuitive application for organizing and enjoying your favorite tunes with seamless playback and customizable features.",
                 "techs": [
@@ -125,7 +129,8 @@
                 "categories" : ["DESKTOP DEVELOPMENT"]
             },
             {
-                "imgUrl": "https://i.ibb.co/3NFw8fK/food-recepie-search.png",
+                "id": "5",
+                "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/food-recepie-search.png",
                 "title": "Food Recipe Search",
                 "desc": "Your ultimate culinary companion - a Food Recipe Search website bringing you a world of delightful dishes at your fingertips.",
                 "techs": [
@@ -138,7 +143,8 @@
                 "categories" : ["WEB DEVELOPMENT", "REST API"]
             },
             {
-                "imgUrl": "https://i.ibb.co/gmcFS9w/Text-Utils.png",
+                "id": "6",
+                "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/text-utils.png",
                 "title": "Text Utility",
                 "desc": "Streamline and enhance your text with our all-in-one Text Utility website - simplifying tasks from formatting to analysis.",
                 "techs": [
@@ -150,7 +156,8 @@
                 "categories":["WEB DEVELOPMENT"]
             },
             {
-                "imgUrl": "https://i.ibb.co/BLg9zDW/weather-app.png",
+                "id": "7",
+                "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/weather-app.png",
                 "title": "Weather App",
                 "desc": "Your go-to Android app for quick and reliable weather updates, helping you stay prepared wherever you go.",
                 "techs": [
@@ -158,12 +165,14 @@
                     "OpenWeatherMap API"
                 ],
                 "demoUrl": "",
-                "downloadUrl": "https://github.com/ritwickrajmakhal/portfolio-blob-storage/raw/main/projects/weather-app.apk",
+                "downloadUrl": "https://portfolioblobstorage.blob.core.windows.net/projects/weather-app.apk",
                 "categories":["ANDROID DEVELOPMENT", "REST API"]
             }
         ],
         "apis":{
-            "formspree" : "mdoravon"
+            "formspree" : "mdoravon",
+            "likeDislikeApi" : "https://portfolio-like-counter.azurewebsites.net/api",
+            "chatbot" : "NrN6Xc4bMdY.3xUmUBXhn2uXWb0Zgqnxx7t8iJqX_3hhSqaofTTIeKM"  
         }
     }
 }
