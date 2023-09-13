@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function LikeDislike(props) {
+export default function Like(props) {
   const localStorageLikeKey = `liked_${props.portfolio_id}`;
   const [liked, setLiked] = useState(() => {
     const storedValue = localStorage.getItem(localStorageLikeKey);
@@ -11,7 +11,7 @@ export default function LikeDislike(props) {
     localStorage.setItem(localStorageLikeKey, JSON.stringify(liked));
   }, [liked, localStorageLikeKey]);
 
-  const [likes, setLikes] = useState();
+  const [likes, setLikes] = useState(0);
 
   useEffect(() => {
     // Fetch likes data from the API when the component mounts or when props change
@@ -50,24 +50,29 @@ export default function LikeDislike(props) {
   };
 
   return (
-    <div
-      className="btn-group-horizontal"
-      role="group"
-      aria-label="Vertical radio toggle button group"
-    >
-      <input
-        onChange={() => handleLike()}
-        type="radio"
-        className="btn-check"
-        name="vbtn-radio"
-        id="vbtn-radio2"
-        autoComplete="off"
-        checked={liked}
-      />
-      <label className={`btn btn-outline-${props.darkMode ? "light" : "primary"}`} htmlFor="vbtn-radio2">
-        <i className={`fa-${liked ? "solid" : "regular"} fa-thumbs-up`}></i>
-        <span> {likes}</span>
-      </label>
+    <div className="d-flex">
+      <div
+        className="btn-group-horizontal"
+        role="group"
+        aria-label="horizontal radio toggle button group"
+      >
+        <input
+          onChange={() => handleLike()}
+          type="radio"
+          className="btn-check"
+          name="vbtn-radio"
+          id="vbtn-radio2"
+          autoComplete="off"
+          checked={liked}
+        />
+        <label
+          className={`btn btn-outline-${props.darkMode ? "light" : "primary"}`}
+          htmlFor="vbtn-radio2"
+        >
+          <i className={`fa-${liked ? "solid" : "regular"} fa-heart`}></i>
+          <span> {likes}</span>
+        </label>
+      </div>
     </div>
   );
 }

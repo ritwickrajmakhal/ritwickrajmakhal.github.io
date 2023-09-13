@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "./Card";
 import Tab from "./Tab";
-import LikeDislike from "./LikeDislike";
+import Like from "./Like";
 
 export default function Portfolio(props) {
   // Get all the categories from the portfolios
@@ -75,7 +75,7 @@ export default function Portfolio(props) {
                 key={index}
                 card={portfolio}
                 footer={
-                  <div className="card-footer">
+                  <>
                     <div className="d-flex justify-content-around mb-3">
                       {portfolio.techs.map((tech, index) => (
                         <span
@@ -136,7 +136,7 @@ export default function Portfolio(props) {
                                     ></iframe>
                                   ) : (
                                     <div
-                                      onLoad={props.setIframeLoaded(true)}
+                                    onLoad={props.setIframeLoaded(true)}
                                       className="d-flex align-items-center justify-content-center"
                                       style={{
                                         height: "100%",
@@ -197,7 +197,7 @@ export default function Portfolio(props) {
                         );
                         props.setModalFooter(
                           props.LikeDislikeApi ? (
-                            <LikeDislike
+                            <Like
                               darkMode={props.darkMode}
                               portfolio_id={portfolio.id}
                               api={props.LikeDislikeApi}
@@ -209,7 +209,7 @@ export default function Portfolio(props) {
                     >
                       <u>Find out more</u>
                     </p>
-                  </div>
+                  </>
                 }
               />
             ))
