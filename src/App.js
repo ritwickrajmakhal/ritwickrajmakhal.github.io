@@ -10,6 +10,7 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
+import Experience from "./components/Experience";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
@@ -61,7 +62,7 @@ function App() {
       <div className="m-3 position-fixed bottom-0 end-0 z-3">
         {data.website.apis.chatbot ? (
           <Chatbot
-          isInHomeComponent={isInHomeComponent}
+            isInHomeComponent={isInHomeComponent}
             darkMode={darkMode}
             image={data.website.user.imgUrl}
             name={data.website.user.name.split(" ")[0]}
@@ -93,19 +94,33 @@ function App() {
         setIframeLoaded={setIframeLoaded}
       />
       {/* The Portfolio component is rendered here */}
-      <Portfolio
-        darkMode={darkMode}
-        portfolios={data.website.portfolios}
-        setModal={setModal}
-        setModalBody={setModalBody}
-        setIframeLoaded={setIframeLoaded}
-        setModalFooter={setModalFooter}
-        LikeDislikeApi={data.website.apis.likeDislikeApi}
-      />
+      {data.website.portfolios && (
+        <Portfolio
+          darkMode={darkMode}
+          portfolios={data.website.portfolios}
+          setModal={setModal}
+          setModalBody={setModalBody}
+          setIframeLoaded={setIframeLoaded}
+          setModalFooter={setModalFooter}
+          LikeDislikeApi={data.website.apis.likeDislikeApi}
+        />
+      )}
       {/* The About component is rendered here */}
-      <About darkMode={darkMode} about={data.website.user} />
+      {data.website.user && (
+        <About darkMode={darkMode} about={data.website.user} />
+      )}
       {/* The Education component is rendered here */}
-      <Education darkMode={darkMode} education={data.website.user.education} />
+      {data.website.user.education && (
+        <Education
+          setModal={setModal}
+          setIframeLoaded={setIframeLoaded}
+          setModalBody={setModalBody}
+          darkMode={darkMode}
+          education={data.website.user.education}
+        />
+      )}
+      {/* The experience component is rendered here */}
+      <Experience darkMode={darkMode} experiences={data.website.experiences} />
       {/* The Contact component is rendered here */}
       <Contact darkMode={darkMode} apiKey={data.website.apis.formspree} />
       {/* The Footer component is rendered here */}
