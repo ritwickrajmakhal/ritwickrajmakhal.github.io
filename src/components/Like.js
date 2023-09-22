@@ -1,54 +1,54 @@
 import React, { useState, useEffect } from "react";
 
 export default function Like(props) {
-  const localStorageLikeKey = `liked_${props.portfolio_id}`;
+  const localStorageKey = "portfolio_likes";
+
+  // Initialize liked and likes state from local storage or with default values
   const [liked, setLiked] = useState(() => {
-    const storedValue = localStorage.getItem(localStorageLikeKey);
-    return storedValue ? JSON.parse(storedValue) : false;
+    const data = JSON.parse(localStorage.getItem(localStorageKey)) || {};
+    return data[props.id]?.like?.liked || false;
   });
-  // Whenever the "liked" state changes, update the corresponding localStorage value
-  useEffect(() => {
-    localStorage.setItem(localStorageLikeKey, JSON.stringify(liked));
-  }, [liked, localStorageLikeKey]);
 
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useState(() => {
+    const data = JSON.parse(localStorage.getItem(localStorageKey)) || {};
+    return data[props.id]?.like?.likes || 0;
+  });
 
-  useEffect(() => {
-    // Fetch likes data from the API when the component mounts or when props change
-    fetch(`${props.api}/likes/${props.portfolio_id}`)
+  // get data from server and update likes
+  useEffect(() => { 
+    fetch(`${props.api}/likes/${props.id}`)
       .then((res) => res.json())
       .then((data) => {
-        setLikes(data); // Update the likes state with the fetched data
-      })
-      .catch((error) => {
-        console.error("Error fetching likes:", error);
+        setLikes(data);
       });
-  }, [props.api, props.portfolio_id]); // This will re-run the effect when api or portfolio_id props change
+  }, [props.api, props.id]);
+
+  // Update liked and likes data in local storage
+  useEffect(() => {
+    // Get data from local storage
+    const storedData = JSON.parse(localStorage.getItem(localStorageKey)) || {};
+
+    // Update liked
+    storedData[props.id] = storedData[props.id] || {};
+    storedData[props.id].like = storedData[props.id].like || {};
+    storedData[props.id].like.liked = liked;
+
+    // Update likes
+    storedData[props.id].like.likes = likes;
+
+    // Save data to local storage
+    localStorage.setItem(localStorageKey, JSON.stringify(storedData));
+  }, [liked, likes, props.id]);
 
   const handleLike = () => {
-    // Update the local state
-    setLiked(true);
     if (!liked) {
-      // Send a POST request to the API to record the like
-      fetch(`${props.api}/likes/${props.portfolio_id}`, {
-        method: "POST",
-        // You can add headers and a request body if needed
-      })
-        .then((res) => {
-          if (res.ok) {
-            // Handle success if needed
-          } else {
-            // Handle errors if needed
-            console.error("Error sending like request:", res.statusText);
-          }
-        })
-        .catch((error) => {
-          console.error("Error sending like request:", error);
-        });
       setLikes(likes + 1);
+      setLiked(!liked);
+      fetch(`${props.api}/likes/${props.id}`, {
+        method: "POST",
+      });
     }
   };
-
   return (
     <div className="d-flex">
       <div

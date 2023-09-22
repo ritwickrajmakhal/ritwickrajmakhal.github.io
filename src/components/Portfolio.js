@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Card from "./Card";
 import Tab from "./Tab";
 import Like from "./Like";
+import CommentSection from "./CommentSection";
 
 export default function Portfolio(props) {
   // Get all the categories from the portfolios
@@ -136,7 +137,7 @@ export default function Portfolio(props) {
                                     ></iframe>
                                   ) : (
                                     <div
-                                    onLoad={props.setIframeLoaded(true)}
+                                      onLoad={props.setIframeLoaded(true)}
                                       className="d-flex align-items-center justify-content-center"
                                       style={{
                                         height: "100%",
@@ -169,7 +170,22 @@ export default function Portfolio(props) {
                                     </div>
                                   ),
                                 },
-                              ]}
+                              ].concat(
+                                props.portfolioApi
+                                  ? [
+                                      {
+                                        name: "Comments",
+                                        modalBody: (
+                                          <CommentSection
+                                            darkMode={props.darkMode}
+                                            api={props.portfolioApi}
+                                            id={portfolio.id}
+                                          />
+                                        ),
+                                      },
+                                    ]
+                                  : []
+                              )}
                             />
                           ),
                         });
@@ -196,11 +212,11 @@ export default function Portfolio(props) {
                           )
                         );
                         props.setModalFooter(
-                          props.LikeDislikeApi ? (
+                          props.portfolioApi ? (
                             <Like
                               darkMode={props.darkMode}
-                              portfolio_id={portfolio.id}
-                              api={props.LikeDislikeApi}
+                              api={props.portfolioApi}
+                              id={portfolio.id}
                             />
                           ) : null
                         );
