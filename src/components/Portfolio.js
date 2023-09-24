@@ -101,7 +101,11 @@ export default function Portfolio(props) {
                                 props.setModalBody(tab.modalBody)
                               }
                               activeTab={{
-                                name: "Demo",
+                                name: (
+                                  <>
+                                    Demo <i className="fa-brands fa-youtube"></i>
+                                  </>
+                                ),
                                 modalBody: portfolio.demoUrl ? (
                                   <iframe
                                     onLoad={() => props.setIframeLoaded(true)}
@@ -125,7 +129,11 @@ export default function Portfolio(props) {
                               }}
                               tabs={[
                                 {
-                                  name: "Demo",
+                                  name: (
+                                    <>
+                                      Demo <i className="fa-brands fa-youtube"></i>
+                                    </>
+                                  ),
                                   modalBody: portfolio.demoUrl ? (
                                     <iframe
                                       onLoad={() => props.setIframeLoaded(true)}
@@ -151,7 +159,12 @@ export default function Portfolio(props) {
                                   ),
                                 },
                                 {
-                                  name: "Download",
+                                  name: (
+                                    <>
+                                      Download{" "}
+                                      <i className="fa-solid fa-cloud-arrow-down"></i>
+                                    </>
+                                  ),
                                   modalBody: (
                                     <div
                                       className="d-flex align-items-center justify-content-center"
@@ -174,7 +187,12 @@ export default function Portfolio(props) {
                                 props.portfolioApi
                                   ? [
                                       {
-                                        name: "Comments",
+                                        name: (
+                                          <>
+                                            Comments{" "}
+                                            <i className="fa-regular fa-comments"></i>
+                                          </>
+                                        ),
                                         modalBody: (
                                           <CommentSection
                                             darkMode={props.darkMode}

@@ -16,7 +16,7 @@ export default function Tab(props) {
     >
       <p
         className={`nav-link ${
-          activeTab.name === tab.name
+          activeTab.name.type === tab.name.type && JSON.stringify(activeTab.name) === JSON.stringify(tab.name)
             ? "active text-bg-primary"
             : "text-bg-secondary"
         }`}
@@ -31,12 +31,12 @@ export default function Tab(props) {
 Tab.propTypes = {
   tabs: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string.isRequired,
+      name: PropTypes.object.isRequired,
       modalBody: PropTypes.element.isRequired,
     }).isRequired
   ).isRequired,
   activeTab: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    name: PropTypes.object.isRequired,
     modalBody: PropTypes.element.isRequired,
   }).isRequired,
   handleTabClick: PropTypes.func.isRequired,

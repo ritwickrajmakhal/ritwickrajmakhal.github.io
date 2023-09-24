@@ -15,7 +15,7 @@ export default function Like(props) {
   });
 
   // get data from server and update likes
-  useEffect(() => { 
+  useEffect(() => {
     fetch(`${props.api}/likes/${props.id}`)
       .then((res) => res.json())
       .then((data) => {
@@ -50,29 +50,15 @@ export default function Like(props) {
     }
   };
   return (
-    <div className="d-flex">
-      <div
-        className="btn-group-horizontal"
-        role="group"
-        aria-label="horizontal radio toggle button group"
-      >
-        <input
-          onChange={() => handleLike()}
-          type="radio"
-          className="btn-check"
-          name="vbtn-radio"
-          id="vbtn-radio2"
-          autoComplete="off"
-          checked={liked}
-        />
-        <label
-          className={`btn btn-outline-${props.darkMode ? "light" : "primary"}`}
-          htmlFor="vbtn-radio2"
-        >
-          <i className={`fa-${liked ? "solid" : "regular"} fa-heart`}></i>
-          <span> {likes}</span>
-        </label>
-      </div>
+    <div>
+      <i
+        role="button"
+        onClick={() => handleLike()}
+        className={`fa-${
+          liked ? "solid" : "regular"
+        } fa-heart text-danger fa-lg px-1`}
+      ></i>
+      <span> {likes}</span>
     </div>
   );
 }

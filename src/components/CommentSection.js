@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const dp = (username = "A") => {
-  return (
-    <div className="mx-1 px-2 border border-light rounded-circle">
-      <h4 className="mb-0">{username.charAt(0).toUpperCase()}</h4>
-    </div>
-  );
-};
+
 function formatDate(dateString) {
   const currentDate = new Date();
   const inputDate = new Date(dateString);
@@ -24,6 +18,13 @@ function formatDate(dateString) {
   }
 }
 export default function CommentSection(props) {
+  const dp = (username) => {
+    return (
+      <div className={`rounded-circle border border-${props.darkMode ? "light" : "dark"} shadow-1-strong me-3`}>
+        <i className={`fa-solid fa-${username.charAt(0).toLowerCase()} p-3`}></i>
+      </div>
+    );
+  };
   const localStorageKey = "portfolio_comments";
   const [comments, setComments] = useState(() => {
     const data = JSON.parse(localStorage.getItem(localStorageKey)) || {};
@@ -41,7 +42,7 @@ export default function CommentSection(props) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        setComments(data.reverse());
+        setComments(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -65,21 +66,18 @@ export default function CommentSection(props) {
   }, [comments, props.id]);
   const CommentBoxes = () => {
     return comments.map((comment, index) => (
-      <div className="col" key={index}>
-        <div className="card">
-          <div className="card-header d-flex align-items-center">
-            {dp(comment.username)}
-            <h5 className="mb-0">{comment.username}</h5>
-          </div>
-          <div className="card-body">
-            <p className="card-text">{comment.comment}</p>
-          </div>
-          <div className="card-footer">
-            <p className="card-text">
+      <div className="mb-3" key={index}>
+        <div className="d-flex flex-start align-items-center">
+          {dp(comment.username)}
+          <div>
+            <h6 className="fw-bold text-primary mb-1">{comment.username}</h6>
+            <p className="text-muted small mb-0">
               {formatDate(comment.date_time.split(" ")[0])}
             </p>
           </div>
         </div>
+        <p className="mt-3 mb-1">{comment.comment}</p>
+        <hr />
       </div>
     ));
   };
@@ -101,16 +99,17 @@ export default function CommentSection(props) {
 
       // Extract the year, month, day, hours, minutes, and seconds
       const year = currentDate.getFullYear();
-      const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-      const day = String(currentDate.getDate()).padStart(2, '0');
-      const hours = String(currentDate.getHours()).padStart(2, '0');
-      const minutes = String(currentDate.getMinutes()).padStart(2, '0');
-      const seconds = String(currentDate.getSeconds()).padStart(2, '0');
+      const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+      const day = String(currentDate.getDate()).padStart(2, "0");
+      const hours = String(currentDate.getHours()).padStart(2, "0");
+      const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+      const seconds = String(currentDate.getSeconds()).padStart(2, "0");
 
       // Create the formatted date string
       const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
       setComments(
+        comments.concat(
         [
           {
             id: null,
@@ -119,7 +118,7 @@ export default function CommentSection(props) {
             date_time: formattedDate,
             username: username ? username : "Anonymous",
           },
-        ].concat(comments)
+        ])
       );
       // Reset the input fields after a successful POST request
       setComment("");
@@ -134,54 +133,61 @@ export default function CommentSection(props) {
       className={props.darkMode ? "dark text-bg-dark" : "light text-bg-light"}
       data-bs-theme={props.darkMode ? "dark" : "light"}
     >
-      <h3 className="text-center">Comments</h3>
-      <div className="row">
-        <div className="col-sm-6 mx-auto">
-          <form onSubmit={postComment}>
-            <div className="input-group mb-3">
-              <span className="input-group-text" id="basic-addon1">
-                {username ? dp(username) : dp()}
-              </span>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Your name (optional)"
-                aria-label="Username"
-                aria-describedby="basic-addon1"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
-              />
+      <section>
+        <div
+          className="container py-3 overflow-y-auto"
+          style={{ maxHeight: "700px" }}
+        >
+          <div className="row d-flex justify-content-center">
+            <div className="col-md-12 col-lg-10 col-xl-8">
+              <div className="card">
+                <div className="card-body">
+                  <CommentBoxes />
+                </div>
+                <div
+                  className="card-footer border-0"
+                >
+                  <form onSubmit={postComment}>
+                    <div className="d-flex flex-start w-100">
+                      <div>{dp(username ? username : "A")}</div>
+                      <div className="form-floating mb-3">
+                        <input
+                          type="text"
+                          value={username}
+                          onChange={(event) => setUsername(event.target.value)}
+                          className="form-control"
+                          id="floatingInput"
+                          placeholder="Your name (Optional)"
+                        />
+                        <label htmlFor="floatingInput">Your name (Optional)</label>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="form-floating">
+                        <textarea
+                          value={comment}
+                          onChange={(event) => setComment(event.target.value)}
+                          className="form-control"
+                          placeholder="Leave a comment here"
+                          id="floatingTextarea2"
+                          style={{ height: "100px" }}
+                          required
+                        ></textarea>
+                        <label htmlFor="floatingTextarea2">What's your view?</label>
+                      </div>
+                    </div>
+                    <div className="float-end mt-2 pt-1">
+                      <button type="submit" className="btn btn-primary btn-sm">
+                        Post comment
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
-            <div className="input-group mb-3">
-              <textarea
-                type="text"
-                className="form-control"
-                placeholder="What's your view?"
-                aria-label="Recipient's username"
-                aria-describedby="button-addon2"
-                required
-                value={comment}
-                onChange={(event) => setComment(event.target.value)}
-              ></textarea>
-              <button
-                className={`btn btn-outline-${
-                  props.darkMode ? "light" : "dark"
-                }`}
-                type="submit"
-                id="button-addon2"
-              >
-                Comment
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
-      </div>
-      <div
-        className="row row-cols-1 row-cols-md-3 g-2 overflow-y-auto"
-        style={{ maxHeight: "500px" }}
-      >
-        <CommentBoxes />
-      </div>
+      </section>
     </div>
   );
 }
