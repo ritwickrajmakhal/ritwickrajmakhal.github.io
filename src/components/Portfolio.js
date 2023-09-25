@@ -76,7 +76,7 @@ export default function Portfolio(props) {
                 key={index}
                 card={portfolio}
                 footer={
-                  <>
+                  <div className="card-footer">
                     <div className="d-flex justify-content-around mb-3">
                       {portfolio.techs.map((tech, index) => (
                         <span
@@ -243,7 +243,7 @@ export default function Portfolio(props) {
                     >
                       <u>Find out more</u>
                     </p>
-                  </>
+                  </div>
                 }
               />
             ))

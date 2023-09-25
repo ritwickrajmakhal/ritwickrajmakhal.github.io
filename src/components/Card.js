@@ -32,12 +32,10 @@ export default function Card(props) {
         <h2 className="card-title">{props.card.title}</h2>
         <p className="card-text fs-5">{props.card.desc}</p>
       </div>
-      <div className="card-footer">
-        {
-          /* If the footer prop is not empty, render the footer */
-          props.footer ? props.footer : null
-        }
-      </div>
+      {
+        /* If the footer prop is not empty, render the footer */
+        props.footer ? props.footer : null
+      }
     </div>
   );
 }

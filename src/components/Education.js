@@ -4,12 +4,13 @@ import Carousel from "./Carousel";
 
 export default function Education(props) {
   const instituteCards = props.education.map((institute, index) => {
-    const carouselItems = institute.gallery.map((image, index) => (
+    const carouselItems = institute.gallery?.map((image, index) => (
       <div className={`carousel-item ${index === 0 && "active"}`} key={index}>
         <img
           onLoad={() => props.setIframeLoaded(true)}
           src={image.imageUrl}
-          className="img-fluid mx-auto d-block w-75"
+          className="img-fluid mx-auto d-block"
+          style={{ maxHeight: "75vh" }}
           alt={`${index}`}
         />
       </div>
@@ -25,18 +26,23 @@ export default function Education(props) {
           desc: institute.desc,
         }}
         footer={
-          <p
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-            role={"button"}
-            className="card-text text-center text-bg-primary rounded-bottom-4"
-            onClick={() => {
-              props.setModal({ title: institute.instituteName });
-              props.setModalBody(<Carousel carouselItems={carouselItems} />);
-            }}
-          >
-            <u>Find out more</u>
-          </p>
+          institute.gallery ? (
+            <div className="card-footer">
+            <p
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              role={"button"}
+              className="card-text text-center text-bg-primary rounded-bottom-4"
+              onClick={() => {
+                props.setModal({ title: institute.instituteName });
+                props.setModalBody(<Carousel carouselItems={carouselItems} />);
+                props.setModalFooter(null);
+              }}
+            >
+              <u>Find out more</u>
+            </p>
+            </div>
+          ) : null
         }
       />
     );

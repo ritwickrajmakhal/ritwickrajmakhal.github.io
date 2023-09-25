@@ -115,6 +115,7 @@ function App() {
           setModal={setModal}
           setIframeLoaded={setIframeLoaded}
           setModalBody={setModalBody}
+          setModalFooter={setModalFooter}
           darkMode={darkMode}
           education={data.website.user.education}
         />
