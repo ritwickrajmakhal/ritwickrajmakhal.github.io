@@ -1,124 +1,63 @@
-# Want to copy my portfolio website?
+# Future Ready Talent Internship Project 📝
+## Project Name:
+### PortfoliAI: Your Virtual Portfolio Assistant 🤖
 
-## Follow these steps:
+![PortfoliAI](./readme_images/portfoli-ai.png)
 
-1. Download this project by [clicking here](https://github.com/ritwickrajmakhal/ritwickrajmakhal.github.io/archive/refs/heads/portfolio-page.zip)
-1. Download Node js from [here](https://nodejs.org/en/download/) if you don't have it already.
-1. Open the project folder in terminal and run `npm install` to install all the dependencies.
-1. Run `npm start` to start the development server.
-1. Now open `package.json` file from the project folder and change the following:
-   - Change `homepage` to your own github page url.
-     ```json
-     "homepage": "https://username.github.io",
-     ```
-   - Change `name` to your own name.
-     ```json
-     "name": "username",
-     ```
-1. Now goto the public folder and change the following files:
-   - Replace meta content and title from `index.html` with your own.
-     ```html
-     <meta
-       name="description"
-       content="A portfolio website of Ritwick Raj Makhal"
-     />
-     <title>Ritwick Raj Makhal</title>
-     ```
-   - Replace the `favicon.ico` with your own favicon.
-   - Delete googlec5aa079041f4b14e.html from the public folder.
-   - Replace logo192.png and logo512.png with your own logo.
-   - Replace `short_name and `name`from`manifest.json` with your own.
-     ```json
-     "short_name": "Ritwick",
-     "name": "Ritwick Raj Makhal",
-     ```
-1. Now go to the src folder and open config.json file and change the following attributes.
-   - `name` : Your name
-   - `shortDesc` : Write a short description about your self.
-   - `description` : Write a long description about your self.
-   - `imgUrl` : Add a url of your square shaped image.
-   - `education` : It is the array of your education details, means you can add as many as education details.
-     ```json
-     {
-       "instituteName": "Enter your institute name",
-       "imageUrl": "Add a url of your institute's square shaped image",
-       "desc": "A small description about your education"
-     },
-     {
-       "instituteName": "Enter another institute name",
-       "imageUrl": "Add a url of another institute's square shaped image",
-       "desc": "A small description about another education"
-     },
-     ```
-     ... and so on.
-   - `socialHandles` : Add four social handles.
-     ```json
-     "socialHandles": [
-               {
-                   "logo": "Add logo of social media platform",
-                   "profile": "Add your profile url"
-               },
-               ... so on up to 4 social handles
-     ]
-     ```
-   - `skills` : Add your skills.
-     ```json
-     "skills": [
-               {
-                   "name": "Add your skill name",
-                   "value": "Add your skill rating out of 100"
-               },
-               ... so on
-     ]
-     ```
-   - `resume` : Add your resume url.
-   - `nav` : Add your navigation items.
-     ```json
-     "nav": {
-                "logo: "Enter a alphabet to show as logo",
-                "links" : [
-                  {
-                    "name": "Contact",
-                    "url": "#contact"
-                  },
-                  Left all the links as it is
-                  {
-                    "name": "Github",
-                    "url": "github.com/username"
-                  }
-                  ...
-                  and add your own links
-                ]
-            }
-     ```
-   - `portfolios` : Add your portfolios.
-     ```json
-     "portfolios": [
-               {
-                   "title": "Add your portfolio name",
-                   "desc": "Add a short description about your portfolio",
-                   "imgUrl": "Add a url of your portfolio of same sized like other portfolios",
-                   "techs": [
-                       "Add your portfolio's tech stack",
-                       "Add your portfolio's tech stack",
-                       "Add your portfolio's tech stack"
-                   ],
-                   "iframeUrl": "Add a url of your portfolio",
-                   "downloadUrl": "Add a url of your portfolio's source code if available else leave it empty",
-                   "categories": [
-                       "Add your portfolio's category",
-                       "Add your portfolio's category"
-                   ]
-               },
-               ... so on
-     ]
-     ```
-    - `apis`: Add your api keys.
-      ```json
-      "apis": {
-        "formspree": "Create a formspree account and create a form then add your form key here. example: https://formspree.io/f/your-form-key",
-      }
-      ```
-1. Now create a github repository with name `username.github.io` where `username` is your github username.
-1. Now open the project folder in terminal and run `npm run deploy` to deploy the project to github pages.
-1. Now open your github page url in browser and see your portfolio website live.
+## Problem Statement/Opportunity:
+**Problem Statement 📝:**
+
+Many portfolio websites lack engaging and interactive elements, hindering effective communication of the creator's skills and achievements to visitors. This limits the ability to make a strong impression and provide personalized responses to visitors' inquiries, ultimately impacting user engagement.
+
+**Opportunity 🤩:**
+
+Our project seeks to solve this issue by leveraging Microsoft Azure services to develop an interactive chatbot. This chatbot aims to enhance user engagement on portfolio websites by providing real-time assistance. It will offer detailed information about the portfolio owner's work, skills, and background, creating a dynamic and personalized experience. By utilizing AI-driven conversation capabilities, the chatbot will answer queries, highlight portfolio achievements, and seamlessly guide users through the content.
+
+By addressing the problem of static portfolio websites, our chatbot empowers portfolio owners to connect more effectively with their audience, leave a lasting impression, and showcase their work and expertise in a captivating manner.
+
+## Project Description:
+**Core Idea 💡:**
+
+Our project aims to address the need for engaging and interactive portfolio websites by developing a chatbot powered by Microsoft Azure services. This chatbot will enhance user experience on portfolio websites, providing real-time assistance and personalized interactions.
+
+**Problem Statement/Opportunity 🔎:**
+
+Many portfolio websites lack interactivity, making it challenging for visitors to connect with the content and understand the creator's skills and achievements effectively. This project seeks to solve this issue by creating a dynamic chatbot that engages visitors, answers their questions, and guides them through the portfolio.
+
+**Solution 🧩:**
+
+Our chatbot, integrated into the portfolio website, leverages Azure's AI capabilities to provide real-time responses to visitor queries. It offers comprehensive information about the portfolio owner's work, skills, and background. Users can interact with it naturally, receiving personalized recommendations and highlights from the portfolio. The chatbot ensures a dynamic and engaging experience, allowing portfolio owners to leave a lasting impression and connect effectively with their audience.
+
+**Alignment with Problem Statement 🔦:**
+
+Our project directly addresses the problem of static and uninspiring portfolio websites. It transforms these websites into interactive platforms, catering to the visitor's need for personalized experiences and instant information access. By enhancing user engagement and interaction, the solution aligns perfectly with the identified problem, making portfolio websites more effective and engaging for both creators and visitors.
+
+## Primary Azure Technologies 🛠️:
+![Azure Bot Service](./readme_images/azure-services.png)
+
+### Breakdowns of Azure Technologies 📊:
+**Azure AI Language Services 🗣️:**
+
+I have used Azure's AI Language Services and Azure Language Studio to develop the knowledge base for the chatbot. The knowledge base contains information about the portfolio owner's work, skills, and background. It also includes responses to frequently asked questions. The knowledge base is used by the chatbot to answer visitor queries and provide personalized recommendations.
+
+![Azure Language Studio](./readme_images/azure-language-studio.png)
+
+**Azure Bot Service 🤖:**
+
+I have used Azure Bot Service to create the chatbot.
+
+![Azure Bot Service](./readme_images/azure-bot-service.png)
+
+**Azure App Service 📱:**
+
+Azure App Service is used to deploy the chatbot. The chatbot is integrated into the portfolio website, allowing visitors to interact with it and receive real-time responses.
+
+![Azure App Service](./readme_images/azure-app-service.png)
+
+**Azure Blob Storage 🗄️:**
+
+Azure Blob Storage is used to store the knowledge base for the chatbot.
+
+![Azure Blob Storage](./readme_images/azure-blob-storage.png)
+
+<center>Made with ❤️ by Ritwick Raj Makhal</center>
