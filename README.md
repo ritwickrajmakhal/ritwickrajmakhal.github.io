@@ -6,6 +6,10 @@
 
 ![PortfoliAI](./readme_images/portfoli-ai.png)
 
+### Detailed explanation of the project:
+
+https://github.com/ritwickrajmakhal/ritwickrajmakhal.github.io/assets/100060023/08642553-59aa-423b-88b1-c29c8dc586e3
+
 ## Problem Statement/Opportunity:
 
 **Problem Statement 📝:**
