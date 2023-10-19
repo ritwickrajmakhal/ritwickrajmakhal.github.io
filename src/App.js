@@ -102,7 +102,7 @@ function App() {
           setModalBody={setModalBody}
           setIframeLoaded={setIframeLoaded}
           setModalFooter={setModalFooter}
-          portfolioApi={data.website.apis.portfolioApi}
+          backendUrl={data.website.backendUrl}
         />
       )}
       {/* The About component is rendered here */}

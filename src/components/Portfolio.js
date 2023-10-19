@@ -184,7 +184,7 @@ export default function Portfolio(props) {
                                   ),
                                 },
                               ].concat(
-                                props.portfolioApi
+                                props.backendUrl
                                   ? [
                                       {
                                         name: (
@@ -196,7 +196,7 @@ export default function Portfolio(props) {
                                         modalBody: (
                                           <CommentSection
                                             darkMode={props.darkMode}
-                                            api={props.portfolioApi}
+                                            api={props.backendUrl}
                                             id={portfolio.id}
                                           />
                                         ),
@@ -230,10 +230,10 @@ export default function Portfolio(props) {
                           )
                         );
                         props.setModalFooter(
-                          props.portfolioApi ? (
+                          props.backendUrl ? (
                             <Like
                               darkMode={props.darkMode}
-                              api={props.portfolioApi}
+                              api={props.backendUrl}
                               id={portfolio.id}
                             />
                           ) : null

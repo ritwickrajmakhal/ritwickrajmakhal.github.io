@@ -36,7 +36,7 @@ export default function CommentSection(props) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${props.api}/comments?portfolioid=${props.id}`
+          `${props.api}/api/comments?portfolioid=${props.id}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

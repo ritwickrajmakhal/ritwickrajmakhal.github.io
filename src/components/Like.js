@@ -16,7 +16,7 @@ export default function Like(props) {
 
   // get data from server and update likes
   useEffect(() => {
-    fetch(`${props.api}/likes/${props.id}`)
+    fetch(`${props.api}/api/likes?portfolioid=${props.id}`)
       .then((res) => res.json())
       .then((data) => {
         setLikes(data);
@@ -44,7 +44,7 @@ export default function Like(props) {
     if (!liked) {
       setLikes(likes + 1);
       setLiked(!liked);
-      fetch(`${props.api}/likes/${props.id}`, {
+      fetch(`${props.api}/api/likes?portfolioid=${props.id}`, {
         method: "POST",
       });
     }
