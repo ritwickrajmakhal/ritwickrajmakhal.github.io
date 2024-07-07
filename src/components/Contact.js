@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 export default function Contact(props) {
-  const [state, handleSubmit] = useForm(props.apiKey);
+  const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_KEY);
   return (
     <div
       id="contact"
@@ -76,6 +76,7 @@ export default function Contact(props) {
                 id="exampleFormControlTextarea1"
                 rows="3"
                 placeholder="Your message here..."
+                required
               ></textarea>
               <ValidationError
                 prefix="Message"

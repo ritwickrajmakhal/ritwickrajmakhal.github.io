@@ -10,7 +10,7 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
-import Experience from "./components/Experience";
+import Achievements from "./components/Achievements";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
@@ -60,19 +60,12 @@ function App() {
         setModalBody={setModalBody}
       />
       <div className="m-3 position-fixed bottom-0 end-0 z-3">
-        {data.website.apis.chatbot ? (
-          <Chatbot
-            isInHomeComponent={isInHomeComponent}
-            darkMode={darkMode}
-            image={data.website.user.imgUrl}
-            name={data.website.user.name.split(" ")[0]}
-            chatbotToken={data.website.apis.chatbot}
-          />
-        ) : (
-          <a href="#home" className="p-2 text-light rounded-circle border">
-            <i className="fa-solid fa-arrow-up"></i>
-          </a>
-        )}
+        <Chatbot
+          isInHomeComponent={isInHomeComponent}
+          darkMode={darkMode}
+          image={data.website.user.imgUrl}
+          name={data.website.user.name.split(" ")[0]}
+        />
       </div>
       {/* The Navbar component is rendered here */}
       <Navbar
@@ -120,10 +113,10 @@ function App() {
           education={data.website.user.education}
         />
       )}
-      {/* The experience component is rendered here */}
-      <Experience darkMode={darkMode} experiences={data.website.experiences} />
+      {/* The achievements component is rendered here */}
+      <Achievements darkMode={darkMode} achievements={data.website.achievements} />
       {/* The Contact component is rendered here */}
-      <Contact darkMode={darkMode} apiKey={data.website.apis.formspree} />
+      <Contact darkMode={darkMode} />
       {/* The Footer component is rendered here */}
       <Footer darkMode={darkMode} footer={data.website.user} />
     </div>

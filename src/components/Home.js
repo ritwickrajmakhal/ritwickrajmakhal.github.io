@@ -10,7 +10,7 @@ export default function Home(props) {
         rel="noreferrer"
         key={index}
         href={
-          socialHandle.profile.endsWith("@gmail.com")
+          socialHandle.profile.includes("@")
             ? "mailto:" + socialHandle.profile
             : socialHandle.profile
         }

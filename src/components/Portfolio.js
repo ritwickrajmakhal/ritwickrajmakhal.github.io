@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "./Card";
 import Tab from "./Tab";
-import Like from "./Like";
-import CommentSection from "./CommentSection";
 
 export default function Portfolio(props) {
   // Get all the categories from the portfolios
@@ -183,27 +181,7 @@ export default function Portfolio(props) {
                                     </div>
                                   ),
                                 },
-                              ].concat(
-                                props.backendUrl
-                                  ? [
-                                      {
-                                        name: (
-                                          <>
-                                            Comments{" "}
-                                            <i className="fa-regular fa-comments"></i>
-                                          </>
-                                        ),
-                                        modalBody: (
-                                          <CommentSection
-                                            darkMode={props.darkMode}
-                                            api={props.backendUrl}
-                                            id={portfolio.id}
-                                          />
-                                        ),
-                                      },
-                                    ]
-                                  : []
-                              )}
+                              ]}
                             />
                           ),
                         });
@@ -228,15 +206,6 @@ export default function Portfolio(props) {
                               </button>
                             </div>
                           )
-                        );
-                        props.setModalFooter(
-                          props.backendUrl ? (
-                            <Like
-                              darkMode={props.darkMode}
-                              api={props.backendUrl}
-                              id={portfolio.id}
-                            />
-                          ) : null
                         );
                       }}
                       className="card-text text-center text-bg-primary rounded-bottom-4"

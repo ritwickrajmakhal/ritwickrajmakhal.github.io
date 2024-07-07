@@ -8,14 +8,14 @@ export default function Chatbot(props) {
 
   useEffect(() => {
     // Create the DirectLine instance and store it in the state
-    const dl = new DirectLine({ token: props.chatbotToken });
+    const dl = new DirectLine({ token: process.env.REACT_APP_CHATBOT_SECRET_KEY });
     setDirectLine(dl);
 
     // Clean up the DirectLine instance on unmount
     return () => {
       dl.end();
     };
-  }, [props.chatbotToken]);
+  }, []);
 
   return (
     <div className="d-flex align-items-center">
