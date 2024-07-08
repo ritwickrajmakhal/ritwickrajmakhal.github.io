@@ -94,7 +94,6 @@
     },
     "portfolios": [
       {
-        "id": "8",
         "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/portfoli-ai.png",
         "title": "Portfoli AI",
         "desc": "Enhance user engagement and interactivity on your portfolio website with our AI-powered chatbot, offering personalized experiences and real-time assistance.",
@@ -109,7 +108,21 @@
         ]
       },
       {
-        "id": "1",
+        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/quizai.png",
+        "title": "Quiz AI",
+        "desc": "Your Intelligent Quiz Companion - Experience seamless, personalized quizzes powered by Gemini. Enhance engagement, test your knowledge, and discover new insights with Quiz AI.",
+        "techs": [
+          "Gemini",
+          "React",
+          "Strapi"
+        ],
+        "demoUrl": "https://www.youtube.com/embed/CnxtuiffBew",
+        "downloadUrl": "https://quizai-weld.vercel.app",
+        "categories": [
+          "AI/ML"
+        ]
+      },
+      {
         "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/meme-share-app.png",
         "title": "Meme share app",
         "desc": "An Android app for endless meme entertainment with just a tap, and the ability to easily share your favorite memes.",
@@ -124,7 +137,6 @@
         ]
       },
       {
-        "id": "2",
         "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/desktop-calculator.png",
         "title": "Desktop Calculator",
         "desc": "A desktop calculator application for quick and efficient mathematical calculations.",
@@ -139,7 +151,6 @@
         ]
       },
       {
-        "id": "3",
         "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/online-music-player.png",
         "title": "Online Music Player",
         "desc": "An interactive online music player platform offering a vast library of songs for seamless streaming.",
@@ -157,7 +168,6 @@
         ]
       },
       {
-        "id": "4",
         "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/desktop-music-player.png",
         "title": "Desktop Music Player",
         "desc": "A sleek and intuitive application for organizing and enjoying your favorite tunes with seamless playback and customizable features.",
@@ -173,7 +183,6 @@
         ]
       },
       {
-        "id": "5",
         "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/food-recepie-search.png",
         "title": "Food Recipe Search",
         "desc": "Your ultimate culinary companion - a Food Recipe Search website bringing you a world of delightful dishes at your fingertips.",
@@ -190,7 +199,6 @@
         ]
       },
       {
-        "id": "6",
         "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/text-utils.png",
         "title": "Text Utility",
         "desc": "Streamline and enhance your text with our all-in-one Text Utility website - simplifying tasks from formatting to analysis.",
@@ -205,7 +213,6 @@
         ]
       },
       {
-        "id": "7",
         "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/weather-app.png",
         "title": "Weather App",
         "desc": "Your go-to Android app for quick and reliable weather updates, helping you stay prepared wherever you go.",
