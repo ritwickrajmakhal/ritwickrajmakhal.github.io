@@ -176,8 +176,8 @@
           "Tkinter",
           "pygame mixer"
         ],
-        "demoUrl": "",
-        "downloadUrl": null,
+        "demoUrl": "https://www.youtube.com/embed/5MIMUIli2tM",
+        "downloadUrl": "https://portfolioblobstorage.blob.core.windows.net/projects/Music_player.zip",
         "categories": [
           "DESKTOP DEVELOPMENT"
         ]
@@ -192,7 +192,7 @@
           "Edamam API"
         ],
         "demoUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
-        "downloadUrl": null,
+        "downloadUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
         "categories": [
           "WEB DEVELOPMENT",
           "REST API"
@@ -207,24 +207,9 @@
           "Bootstrap"
         ],
         "demoUrl": "https://ritwickrajmakhal.github.io/TextUtils/",
-        "downloadUrl": null,
+        "downloadUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
         "categories": [
           "WEB DEVELOPMENT"
-        ]
-      },
-      {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/weather-app.png",
-        "title": "Weather App",
-        "desc": "Your go-to Android app for quick and reliable weather updates, helping you stay prepared wherever you go.",
-        "techs": [
-          "Android",
-          "OpenWeatherMap API"
-        ],
-        "demoUrl": "",
-        "downloadUrl": "https://portfolioblobstorage.blob.core.windows.net/projects/weather-app.apk",
-        "categories": [
-          "ANDROID DEVELOPMENT",
-          "REST API"
         ]
       }
     ],
