@@ -94,6 +94,34 @@
     },
     "portfolios": [
       {
+        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/eventure.png",
+        "title": "Eventure",
+        "desc": "This platform is a user-friendly web interface that simplifies event planning and management. It enables organizers to create events, send invitations with QR codes, and manage secure entry.",
+        "techs": [
+          "Next.js",
+          "Strapi"
+        ],
+        "demoUrl": "https://eventure-ten.vercel.app",
+        "downloadUrl": "https://github.com/ritwickrajmakhal/eventure",
+        "categories": [
+          "WEB DEVELOPMENT"
+        ]
+      },
+      {
+        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/beverages-application.png",
+        "title": "Beverages Application",
+        "desc": "A website for beverage enthusiasts to explore and discover a wide range of beverages, including cocktails, mocktails, and more.",
+        "techs": [
+          "Next.js",
+          "Strapi"
+        ],
+        "demoUrl": "https://beverages-application.vercel.app",
+        "downloadUrl": "https://github.com/ritwickrajmakhal/Beverages-Application",
+        "categories": [
+          "WEB DEVELOPMENT"
+        ]
+      },
+      {
         "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/portfoli-ai.png",
         "title": "Portfoli AI",
         "desc": "Enhance user engagement and interactivity on your portfolio website with our AI-powered chatbot, offering personalized experiences and real-time assistance.",
@@ -116,8 +144,8 @@
           "React",
           "Strapi"
         ],
-        "demoUrl": "https://www.youtube.com/embed/CnxtuiffBew",
-        "downloadUrl": "https://quizai-weld.vercel.app",
+        "demoUrl": "https://quizai-weld.vercel.app",
+        "downloadUrl": "https://github.com/ritwickrajmakhal/quizai",
         "categories": [
           "AI/ML"
         ]
@@ -192,7 +220,7 @@
           "Edamam API"
         ],
         "demoUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
-        "downloadUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
+        "downloadUrl": "https://github.com/ritwickrajmakhal/online-music-player",
         "categories": [
           "WEB DEVELOPMENT",
           "REST API"
@@ -206,8 +234,8 @@
           "React",
           "Bootstrap"
         ],
-        "demoUrl": "https://ritwickrajmakhal.github.io/TextUtils/",
-        "downloadUrl": "https://ritwickrajmakhal.github.io/food-recipe-search/",
+        "demoUrl": "https://text-utils-jade-one.vercel.app",
+        "downloadUrl": "https://github.com/ritwickrajmakhal/TextUtils",
         "categories": [
           "WEB DEVELOPMENT"
         ]
@@ -215,7 +243,13 @@
     ],
     "achievements": [
       {
-        "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/experience-1-hactoberfest.png"
+        "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/hacktoberfest-2022.png"
+      },
+      {
+        "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/hacktoberfest-2023.png"
+      },
+      {
+        "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/internship-1.png"
       }
     ]
   }
