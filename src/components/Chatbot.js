@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { DirectLine } from "botframework-directlinejs";
 import ReactWebChat from "botframework-webchat";
 
-export default function Chatbot(props) {
+export default function Chatbot({ isInHomeComponent, darkMode, image, name }) {
   const [directLine, setDirectLine] = useState(null);
   const [chatbotVisible, setChatbotVisible] = useState(false);
 
   useEffect(() => {
     // Create the DirectLine instance and store it in the state
-    const dl = new DirectLine({ token: process.env.REACT_APP_CHATBOT_SECRET_KEY });
+    const dl = new DirectLine({
+      token: process.env.REACT_APP_CHATBOT_SECRET_KEY,
+    });
     setDirectLine(dl);
 
     // Clean up the DirectLine instance on unmount
@@ -20,24 +22,22 @@ export default function Chatbot(props) {
   return (
     <div className="d-flex align-items-center">
       <button
-        hidden={chatbotVisible || !props.isInHomeComponent}
-        className={`btn btn-${props.darkMode ? "light" : "dark"} mx-1`}
+        hidden={chatbotVisible || !isInHomeComponent}
+        className={`btn btn-${darkMode ? "light" : "dark"} mx-1`}
       >
         Let's chat
       </button>
       <div
         className={`d-flex align-items-center ${
           chatbotVisible ? "d-none" : ""
-        } border border-${
-          props.darkMode ? "light" : "dark"
-        } p-1 rounded-circle`}
+        } border border-${darkMode ? "light" : "dark"} p-1 rounded-circle`}
         onClick={() => setChatbotVisible(true)}
         role="button"
       >
         <img
           style={{ height: "40px" }}
           className="img-fluid rounded-circle"
-          src={props.image}
+          src={image}
           alt="Chatbot"
         ></img>
       </div>
@@ -46,10 +46,10 @@ export default function Chatbot(props) {
           <div
             hidden={!chatbotVisible}
             className={`position-relative card border-${
-              props.darkMode ? "light" : "dark"
+              darkMode ? "light" : "dark"
             }`}
             style={{
-              backgroundColor: props.darkMode ? "#16222A" : "#8e9eab",
+              backgroundColor: darkMode ? "#16222A" : "#8e9eab",
               maxHeight: "75vh",
               minHeight: "75vh",
               width: "350px",
@@ -58,13 +58,21 @@ export default function Chatbot(props) {
           >
             <div
               className={`card-header d-flex justify-content-between align-items-center p-3 border-bottom border-${
-                props.darkMode ? "light" : "dark"
-              } ${props.darkMode ? "text-light" : "text-dark"}`}
-              style={{ position: "absolute", top: "0", width: "100%", backgroundColor: props.darkMode ? "#3A6073" : "#eef2f3", }}
+                darkMode ? "light" : "dark"
+              } ${darkMode ? "text-light" : "text-dark"}`}
+              style={{
+                position: "absolute",
+                top: "0",
+                width: "100%",
+                backgroundColor: darkMode ? "#3A6073" : "#eef2f3",
+              }}
             >
               <p className="mb-0 fw-bold">
-                <i className="fa-solid fa-circle fa-2xs" style={{color:"#00ff87"}}></i>{" "}
-                {props.name}
+                <i
+                  className="fa-solid fa-circle fa-2xs"
+                  style={{ color: "#00ff87" }}
+                ></i>{" "}
+                {name}
               </p>
               <i
                 className="fas fa-times"
@@ -86,22 +94,20 @@ export default function Chatbot(props) {
                 directLine={directLine}
                 styleOptions={{
                   width: "100%",
-                  backgroundColor: props.darkMode ? "#16222A" : "#8e9eab",
+                  backgroundColor: darkMode ? "#16222A" : "#8e9eab",
                   bubbleFromUserBorderRadius: "15px",
                   bubbleBorderRadius: "15px",
-                  bubbleFromUserBackground: props.darkMode
-                    ? "#16222A"
-                    : "#8e9eab",
-                  botAvatarImage: props.image,
-                  botAvatarInitials: props.name,
-                  bubbleBackground: props.darkMode ? "#16222A" : "#8e9eab",
-                  bubbleFromUserTextColor: props.darkMode ? "#fff" : "#000",
-                  bubbleTextColor: props.darkMode ? "#fff" : "#000",
-                  sendBoxButtonColor: props.darkMode ? "#fff" : "#000",
-                  sendBoxTextColor: props.darkMode ? "#fff" : "#000",
-                  sendBoxBackground: props.darkMode ? "#16222A" : "#8e9eab",
-                  sendBoxPlaceholderColor: props.darkMode ? "#fff" : "#000",
-                  timestampColor: props.darkMode ? "#fff" : "#000",
+                  bubbleFromUserBackground: darkMode ? "#16222A" : "#8e9eab",
+                  botAvatarImage: image,
+                  botAvatarInitials: name,
+                  bubbleBackground: darkMode ? "#16222A" : "#8e9eab",
+                  bubbleFromUserTextColor: darkMode ? "#fff" : "#000",
+                  bubbleTextColor: darkMode ? "#fff" : "#000",
+                  sendBoxButtonColor: darkMode ? "#fff" : "#000",
+                  sendBoxTextColor: darkMode ? "#fff" : "#000",
+                  sendBoxBackground: darkMode ? "#16222A" : "#8e9eab",
+                  sendBoxPlaceholderColor: darkMode ? "#fff" : "#000",
+                  timestampColor: darkMode ? "#fff" : "#000",
                   hideUploadButton: true,
                 }}
               />

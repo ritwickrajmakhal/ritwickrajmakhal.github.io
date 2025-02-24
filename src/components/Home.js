@@ -1,8 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-
-export default function Home(props) {
-  const socialHandles = props.home.socialHandles
+export default function Home({
+  darkMode,
+  home,
+  setModal,
+  setModalBody,
+  setIframeLoaded,
+}) {
+  const socialHandles = home.socialHandles
     .slice(0, 4)
     .map((socialHandle, index) => (
       <a
@@ -26,7 +29,7 @@ export default function Home(props) {
   return (
     <div
       id="home"
-      className={props.darkMode ? "dark text-bg-dark" : "light text-bg-light"}
+      className={darkMode ? "dark text-bg-dark" : "light text-bg-light"}
     >
       <div className="container">
         <div
@@ -34,7 +37,7 @@ export default function Home(props) {
           style={{ fontSize: "2.3rem", letterSpacing: "0.2rem" }}
         >
           <div className="col-auto">Hi! I'm</div>
-          <div className="col-auto">{props.home.name}</div>
+          <div className="col-auto">{home.name}</div>
         </div>
         <div className="row justify-content-end">
           <div className="col-sm-5">
@@ -52,17 +55,17 @@ export default function Home(props) {
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
               className={
-                props.darkMode
+                darkMode
                   ? "btn btn-medium border my-5 dark text-bg-dark"
                   : "btn btn-medium border-black my-5 light text-bg-light"
               }
               onClick={() => {
-                props.setModal({ title: "Resume", tab: null });
-                props.setModalBody(
+                setModal({ title: "Resume", tab: null });
+                setModalBody(
                   <iframe
-                    onLoad={() => props.setIframeLoaded(true)}
+                    onLoad={() => setIframeLoaded(true)}
                     style={{ height: "100%", width: "100%" }}
-                    src={props.home.resume}
+                    src={home.resume}
                     title={"Resume"}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
@@ -78,17 +81,3 @@ export default function Home(props) {
     </div>
   );
 }
-
-Home.propTypes = {
-  darkMode: PropTypes.bool.isRequired,
-  home: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    socialHandles: PropTypes.arrayOf(
-      PropTypes.shape({
-        logo: PropTypes.string.isRequired,
-        profile: PropTypes.string.isRequired,
-      }).isRequired
-    ).isRequired,
-    resume: PropTypes.string.isRequired,
-  }).isRequired,
-};

@@ -1,7 +1,5 @@
-import PropTypes from "prop-types";
-
-export default function Navbar(props) {
-  const links = props.nav.links.map((link, index) => (
+export default function Navbar({ elementRef, darkMode, setDarkMode, nav }) {
+  const links = nav.links.map((link, index) => (
     <li key={index} className="nav-item">
       <a className="nav-link active" aria-current="page" href={link["url"]}>
         {link["name"]}
@@ -12,21 +10,21 @@ export default function Navbar(props) {
   return (
     <div>
       <nav
-        ref={props.elementRef}
+        ref={elementRef}
         className={
-          props.darkMode
+          darkMode
             ? "navbar sticky-top navbar-expand-lg dark"
             : "navbar sticky-top navbar-expand-lg light"
         }
-        data-bs-theme={props.darkMode ? "dark" : ""}
+        data-bs-theme={darkMode ? "dark" : ""}
       >
         <div className="container">
           <a className="navbar-brand" href="/">
             <i
               className={
-                props.darkMode
-                  ? `border border-white rounded p-3 fa-solid fa-${props.nav.logo}`
-                  : `border border-black rounded p-3 fa-solid fa-${props.nav.logo}`
+                darkMode
+                  ? `border border-white rounded p-3 fa-solid fa-${nav.logo}`
+                  : `border border-black rounded p-3 fa-solid fa-${nav.logo}`
               }
             ></i>
           </a>
@@ -44,11 +42,11 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">{links}</ul>
             <div className="d-flex p-2">
-              {props.darkMode ? (
+              {darkMode ? (
                 <i
                   role="button"
                   onClick={() => {
-                    props.setDarkMode(false);
+                    setDarkMode(false);
                     localStorage["darkMode"] = false;
                   }}
                   className="fa-solid fa-sun fa-lg"
@@ -58,7 +56,7 @@ export default function Navbar(props) {
                 <i
                   role="button"
                   onClick={() => {
-                    props.setDarkMode(true);
+                    setDarkMode(true);
                     localStorage["darkMode"] = true;
                   }}
                   className="fa-solid fa-moon fa-lg"
@@ -71,16 +69,3 @@ export default function Navbar(props) {
     </div>
   );
 }
-Navbar.propTypes = {
-  darkMode: PropTypes.bool.isRequired,
-  setDarkMode: PropTypes.func.isRequired,
-  nav: PropTypes.shape({
-    logo: PropTypes.string.isRequired,
-    links: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  }).isRequired,
-};

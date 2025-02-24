@@ -2,12 +2,19 @@ import React from "react";
 import Card from "./Card";
 import Carousel from "./Carousel";
 
-export default function Education(props) {
-  const instituteCards = props.education.map((institute, index) => {
+export default function Education({
+  setModal,
+  setIframeLoaded,
+  setModalBody,
+  setModalFooter,
+  darkMode,
+  education,
+}) {
+  const instituteCards = education.map((institute, index) => {
     const carouselItems = institute.gallery?.map((image, index) => (
       <div className={`carousel-item ${index === 0 && "active"}`} key={index}>
         <img
-          onLoad={() => props.setIframeLoaded(true)}
+          onLoad={() => setIframeLoaded(true)}
           src={image.imageUrl}
           className="img-fluid mx-auto d-block"
           style={{ maxHeight: "75vh" }}
@@ -18,7 +25,7 @@ export default function Education(props) {
     return (
       <Card
         animate={false}
-        darkMode={props.darkMode}
+        darkMode={darkMode}
         key={index}
         card={{
           title: institute.instituteName,
@@ -28,19 +35,19 @@ export default function Education(props) {
         footer={
           institute.gallery ? (
             <div className="card-footer">
-            <p
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              role={"button"}
-              className="card-text text-center text-bg-primary rounded-bottom-4"
-              onClick={() => {
-                props.setModal({ title: institute.instituteName });
-                props.setModalBody(<Carousel carouselItems={carouselItems} />);
-                props.setModalFooter(null);
-              }}
-            >
-              <u>Find out more</u>
-            </p>
+              <p
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                role={"button"}
+                className="card-text text-center text-bg-primary rounded-bottom-4"
+                onClick={() => {
+                  setModal({ title: institute.instituteName });
+                  setModalBody(<Carousel carouselItems={carouselItems} />);
+                  setModalFooter(null);
+                }}
+              >
+                <u>Find out more</u>
+              </p>
             </div>
           ) : null
         }
@@ -50,7 +57,7 @@ export default function Education(props) {
   return (
     <div
       id="education"
-      className={props.darkMode ? "dark text-bg-dark" : "light text-bg-light"}
+      className={darkMode ? "dark text-bg-dark" : "light text-bg-light"}
     >
       <div className="container py-3">
         <h1 className="text-center">Education</h1>
