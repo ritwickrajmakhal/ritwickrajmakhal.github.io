@@ -1,25 +1,22 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
-export default function Contact(props) {
+export default function Contact({ darkMode }) {
   const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_KEY);
   return (
     <div
       id="contact"
-      className={props.darkMode ? "dark text-bg-dark" : "light text-bg-light"}
+      className={darkMode ? "dark text-bg-dark" : "light text-bg-light"}
     >
       <div className="container py-3">
         <h1 className="text-center">Contact</h1>
         {state.succeeded ? (
-          <div
-            className="alert alert-warning fade show mb-3"
-            role="alert"
-          >
+          <div className="alert alert-warning fade show mb-3" role="alert">
             Thank you for reaching out! I'll get back to you shortly.
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            data-bs-theme={props.darkMode ? "dark" : "light"}
+            data-bs-theme={darkMode ? "dark" : "light"}
           >
             <input
               name="subject"
@@ -87,7 +84,7 @@ export default function Contact(props) {
             <div className="d-grid gap-2 col-6 mx-auto">
               <button
                 className={
-                  props.darkMode
+                  darkMode
                     ? "btn btn-outline-dark text-light"
                     : "btn btn-outline-light text-dark"
                 }

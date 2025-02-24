@@ -1,8 +1,8 @@
 import React from "react";
 import Carousel from "./Carousel";
 
-export default function Achievements(props) {
-  const carouselItems = props.achievements.map((achievement, index) => (
+export default function Achievements({ darkMode, achievements }) {
+  const carouselItems = achievements.map((achievement, index) => (
     <div className={`carousel-item ${index === 0 && "active"}`} key={index}>
       <img
         src={achievement.imageUrl}
@@ -15,7 +15,7 @@ export default function Achievements(props) {
   return (
     <div
       id="achievements"
-      className={props.darkMode ? "dark text-bg-dark" : "light text-bg-light"}
+      className={darkMode ? "dark text-bg-dark" : "light text-bg-light"}
     >
       <div className="container py-3">
         <h1 className="text-center">Achievements</h1>

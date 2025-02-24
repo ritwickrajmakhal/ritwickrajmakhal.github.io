@@ -3,38 +3,38 @@ import PropTypes from "prop-types";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import the CSS file for AOS styles
 
-export default function Card(props) {
+export default function Card({ darkMode, card, animate, footer, title }) {
   useEffect(() => {
     AOS.init(); // Initialize AOS
   }, []);
   return (
     <div
-      data-aos={props.animate ? "fade-up" : ""}
+      data-aos={animate ? "fade-up" : ""}
       data-aos-duration="1000"
       className={
-        props.darkMode
+        darkMode
           ? "card m-2 p-2 shadow-lg rounded-4 text-light"
           : "card m-2 p-1 shadow-lg rounded-4"
       }
       style={{ width: "25rem", backgroundColor: "rgba(0,0,0,0.2)" }}
-      data-bs-theme={props.darkMode ? "dark" : ""}
+      data-bs-theme={darkMode ? "dark" : ""}
     >
       <img
-        src={props.card.imgUrl}
+        src={card.imgUrl}
         className={
-          props.animate
+          animate
             ? "card-img-top rounded-top-3 scale-on-hover img-fluid"
             : "card-img-top rounded-top-3 img-fluid"
         }
-        alt={props.title}
+        alt={title}
       />
       <div className="card-body">
-        <h2 className="card-title">{props.card.title}</h2>
-        <p className="card-text fs-5">{props.card.desc}</p>
+        <h2 className="card-title">{card.title}</h2>
+        <p className="card-text fs-5">{card.desc}</p>
       </div>
       {
         /* If the footer prop is not empty, render the footer */
-        props.footer ? props.footer : null
+        footer ? footer : null
       }
     </div>
   );

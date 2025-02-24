@@ -1,6 +1,16 @@
 import React from "react";
 import preloader from "./../preloader.gif";
-export default function Modal(props) {
+export default function Modal({
+  darkMode,
+  iframeLoaded,
+  setIframeLoaded,
+  modal,
+  setModal,
+  modalBody,
+  modalFooter,
+  setModalFooter,
+  setModalBody,
+}) {
   return (
     <div
       className="modal fade modal-xl"
@@ -13,24 +23,24 @@ export default function Modal(props) {
       <div className="modal-dialog">
         <div
           className={
-            props.darkMode
+            darkMode
               ? "modal-content dark text-bg-dark"
               : "modal-content light text-bg-light"
           }
         >
           <div className="modal-header py-2 border-0">
             <h1 className="modal-title fs-5" id="exampleModalLabel">
-              {props.modal.title}
+              {modal.title}
             </h1>
             <button
               type="button"
               className="btn-close bg-danger"
               data-bs-dismiss="modal"
               onClick={() => {
-                props.setIframeLoaded(false);
-                props.setModal({ title: null, tab: null });
-                props.setModalBody(null);
-                props.setModalFooter(null);
+                setIframeLoaded(false);
+                setModal({ title: null, tab: null });
+                setModalBody(null);
+                setModalFooter(null);
               }}
               aria-label="Close"
             ></button>
@@ -39,8 +49,8 @@ export default function Modal(props) {
             className="modal-body p-1 overflow-hidden"
             style={{ height: "707px" }}
           >
-            {props.modal.tab}
-            {!props.iframeLoaded && (
+            {modal.tab}
+            {!iframeLoaded && (
               <div
                 className="bg-light"
                 style={{
@@ -54,17 +64,21 @@ export default function Modal(props) {
                 <img className="img-fluid" src={preloader} alt="loader" />
               </div>
             )}
-            {props.modalBody}
+            {modalBody}
           </div>
-          <div className={`modal-footer p-1 ${props.modalFooter ? 'd-flex justify-content-between' : ''}`}>
-            {props.modalFooter}
+          <div
+            className={`modal-footer p-1 ${
+              modalFooter ? "d-flex justify-content-between" : ""
+            }`}
+          >
+            {modalFooter}
             <button
               type="button"
               onClick={() => {
-                props.setIframeLoaded(false);
-                props.setModal({ title: null, tab: null });
-                props.setModalBody(null);
-                props.setModalFooter(null);
+                setIframeLoaded(false);
+                setModal({ title: null, tab: null });
+                setModalBody(null);
+                setModalFooter(null);
               }}
               className="btn btn-danger"
               data-bs-dismiss="modal"
