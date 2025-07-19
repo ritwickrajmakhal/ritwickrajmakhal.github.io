@@ -26,7 +26,9 @@ export default function Card({ darkMode, card, animate, footer, title }) {
             ? "card-img-top rounded-top-3 scale-on-hover img-fluid"
             : "card-img-top rounded-top-3 img-fluid"
         }
-        alt={title}
+        alt={`Screenshot of ${card.title} project by Ritwick Raj Makhal`}
+        loading="lazy"
+        decoding="async"
       />
       <div className="card-body">
         <h2 className="card-title">{card.title}</h2>

@@ -20,7 +20,14 @@ export default function Portfolio(props) {
       className={props.darkMode ? "dark text-bg-dark" : "light text-bg-light"}
     >
       <div className="container">
-        <h1 className="text-center">Portfolio</h1>
+        <header className="text-center mb-5">
+          <h1 className={`display-5 fw-bold ${props.darkMode ? 'text-light' : 'text-dark'}`}>
+            Portfolio
+          </h1>
+          <p className={`lead ${props.darkMode ? 'text-light' : 'text-muted'}`}>
+            A showcase of my projects and achievements
+          </p>
+        </header>
         <div className="d-flex justify-content-sm-evenly py-2 overflow-auto">
           {/* Create a badge for the selected category */}
           <span
@@ -172,7 +179,7 @@ export default function Portfolio(props) {
                                         href={portfolio.downloadUrl}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="btn btn-primary"
+                                        className={`btn btn-primary text-decoration-none ${props.darkMode ? "text-bg-dark" : "text-bg-light"}`}
                                       >
                                         {portfolio.downloadUrl
                                           ? "Click Here to Download"

@@ -1,20 +1,241 @@
-.dark {
-    background: #16222A;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #3A6073, #16222A);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3A6073, #16222A);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    transition: all 0.3s ease;
+/* Bootstrap Color Overrides for Nature Fresh Theme */
+:root {
+    /* Primary colors - Green theme */
+    --bs-primary: #16a34a;
+    --bs-primary-rgb: 22, 163, 74;
+    --bs-secondary: #15803d;
+    --bs-secondary-rgb: 21, 128, 61;
+    --bs-success: #22c55e;
+    --bs-success-rgb: 34, 197, 94;
+    --bs-info: #10b981;
+    --bs-info-rgb: 16, 185, 129;
+    --bs-warning: #eab308;
+    --bs-warning-rgb: 234, 179, 8;
+    --bs-danger: #dc2626;
+    --bs-danger-rgb: 220, 38, 38;
+    --bs-light: #f0fdf4;
+    --bs-light-rgb: 240, 253, 244;
+    --bs-dark: #14532d;
+    --bs-dark-rgb: 20, 83, 45;
+}
+
+/* Button Overrides */
+.btn-primary {
+    background-color: #16a34a;
+    border-color: #16a34a;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #15803d;
+    border-color: #15803d;
+    background: linear-gradient(135deg, #15803d, #16a34a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+.btn-secondary {
+    background-color: #15803d;
+    border-color: #15803d;
+    background: linear-gradient(135deg, #15803d, #166534);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #166534;
+    border-color: #166534;
+    background: linear-gradient(135deg, #166534, #14532d);
+}
+
+.btn-outline-primary {
+    color: #16a34a;
+    border-color: #16a34a;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background-color: #16a34a;
+    border-color: #16a34a;
+    color: white;
+}
+
+.btn-outline-secondary {
+    color: #15803d;
+    border-color: #15803d;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+    background-color: #15803d;
+    border-color: #15803d;
+    color: white;
+}
+
+/* Badge Overrides */
+.badge.text-bg-primary {
+    background-color: #16a34a !important;
+    color: white !important;
+}
+
+.badge.text-bg-secondary {
+    background-color: #15803d !important;
+    color: white !important;
+}
+
+.badge.rounded-pill.text-bg-primary {
+    background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+}
+
+.badge.rounded-pill.text-bg-secondary {
+    background: linear-gradient(135deg, #15803d, #16a34a) !important;
+}
+
+/* Alert Overrides */
+.alert-primary {
+    background-color: #dcfce7;
+    border-color: #bbf7d0;
+    color: #14532d;
+}
+
+.alert-secondary {
+    background-color: #f0fdf4;
+    border-color: #dcfce7;
+    color: #166534;
+}
+
+/* Progress Bar Overrides */
+.progress-bar {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+/* Card Overrides */
+.card {
+    border-color: #bbf7d0;
+}
+
+.light .card {
+    background-color: rgba(240, 253, 244, 0.9);
+    border-color: #bbf7d0;
+}
+
+.dark .card {
+    background-color: rgba(21, 128, 61, 0.2);
+    border-color: #166534;
+}
+
+/* Text Color Overrides */
+.text-primary {
+    color: #16a34a !important;
+}
+
+.text-secondary {
+    color: #15803d !important;
+}
+
+.dark .text-primary {
+    color: #22c55e !important;
+}
+
+.dark .text-secondary {
+    color: #16a34a !important;
+}
+
+/* Link Overrides */
+a {
+    color: #16a34a;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #15803d;
+    text-decoration: underline;
+}
+
+.dark a {
+    color: #22c55e;
+}
+
+.dark a:hover {
+    color: #16a34a;
+}
+
+/* Border Overrides */
+.border-primary {
+    border-color: #16a34a !important;
+}
+
+.border-secondary {
+    border-color: #15803d !important;
+}
+
+.dark .border {
+    border-color: #166534 !important;
+}
+
+.light .border {
+    border-color: #bbf7d0 !important;
+}
+
+.dark .border-black {
+    border-color: #22c55e !important;
+}
+
+/* Form Control Overrides */
+.form-control:focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 0.2rem rgba(22, 163, 74, 0.25);
+}
+
+.dark .form-control {
+    background-color: rgba(21, 128, 61, 0.1);
+    border-color: #166534;
+    color: #f0fdf4;
+}
+
+.dark .form-control:focus {
+    background-color: rgba(21, 128, 61, 0.2);
+    border-color: #22c55e;
+    box-shadow: 0 0 0 0.2rem rgba(34, 197, 94, 0.25);
+}
+
+/* Navbar Overrides */
+.navbar-brand {
+    color: #16a34a !important;
+}
+
+.dark .navbar-brand {
+    color: #22c55e !important;
+}
+
+/* Shadow Overrides for Green Theme */
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(22, 163, 74, 0.15) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(22, 163, 74, 0.175) !important;
+}
+
+.dark .shadow {
+    box-shadow: 0 0.5rem 1rem rgba(34, 197, 94, 0.2) !important;
+}
+
+.dark .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(34, 197, 94, 0.25) !important;
 }
 
 .light {
-    background: #8e9eab;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #eef2f3, #8e9eab);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #f0fdf4;
+    background: -webkit-linear-gradient(to right, #bbf7d0, #f0fdf4);
+    background: linear-gradient(to right, #bbf7d0, #f0fdf4);
+    transition: all 0.3s ease;
+}
+
+.dark {
+    background: #14532d;
+    background: -webkit-linear-gradient(to right, #166534, #14532d);
+    background: linear-gradient(to right, #166534, #14532d);
     transition: all 0.3s ease;
 }
 
@@ -52,4 +273,474 @@
 
 .scale-on-hover:hover {
     transform: scale(1.1);
+}
+
+/* Enhanced Progress Bar Styles */
+.enhanced-progress {
+    height: 12px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 1px solid #bbf7d0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .enhanced-progress {
+    background: linear-gradient(135deg, #14532d, #166534);
+    border-color: #166534;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar-animated {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    box-shadow: 0 1px 3px rgba(22, 163, 74, 0.3);
+}
+
+.dark .progress-bar-animated {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    box-shadow: 0 1px 3px rgba(34, 197, 94, 0.4);
+}
+
+/* Skill Level Colors */
+.progress-bar-expert {
+    background: linear-gradient(135deg, #059669, #10b981) !important;
+}
+
+.progress-bar-experienced {
+    background: linear-gradient(135deg, #16a34a, #22c55e) !important;
+}
+
+.progress-bar-intermediate {
+    background: linear-gradient(135deg, #65a30d, #84cc16) !important;
+}
+
+.progress-bar-beginner {
+    background: linear-gradient(135deg, #ca8a04, #eab308) !important;
+}
+
+/* Progress bar shine effect */
+.progress-bar-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Skill Item Styling */
+.skill-item {
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(240, 253, 244, 0.3);
+    border: 1px solid rgba(187, 247, 208, 0.5);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.dark .skill-item {
+    background: rgba(20, 83, 45, 0.3);
+    border-color: rgba(22, 101, 52, 0.5);
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.15);
+    background: rgba(240, 253, 244, 0.5);
+}
+
+.dark .skill-item:hover {
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.2);
+    background: rgba(20, 83, 45, 0.5);
+}
+
+/* Enhanced Skill Header Layout */
+.skill-header {
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.skill-info {
+    margin-top: auto;
+}
+
+/* Better Skill Labels */
+.skill-label {
+    color: #166534;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+    font-weight: 600;
+    text-align: center;
+    min-height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dark .skill-label {
+    color: #bbf7d0;
+}
+
+/* Responsive font sizes for skill labels */
+@media (min-width: 1200px) {
+    .skill-label {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .skill-label {
+        font-size: 0.9rem;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .skill-item {
+        height: auto;
+        min-height: 120px;
+        padding: 1rem;
+    }
+
+    .skill-header {
+        min-height: 50px;
+    }
+
+    .skill-label {
+        font-size: 0.85rem;
+        min-height: 20px;
+    }
+}
+
+/* Skill percentage improvements */
+.skill-percentage {
+    color: #15803d;
+    font-size: 1.1rem;
+    font-weight: 700;
+    min-width: 40px;
+    text-align: right;
+}
+
+.dark .skill-percentage {
+    color: #22c55e;
+}
+
+/* Enhanced Skill Level Badges */
+.skill-level {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme-aware Skill Level Badges */
+.skill-level-expert {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    border: 1px solid #10b981;
+}
+
+.dark .skill-level-expert {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: #0f172a;
+    border: 1px solid #34d399;
+}
+
+.skill-level-experienced {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: white;
+    border: 1px solid #22c55e;
+}
+
+.dark .skill-level-experienced {
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    color: #0f172a;
+    border: 1px solid #4ade80;
+}
+
+.skill-level-intermediate {
+    background: linear-gradient(135deg, #65a30d, #84cc16);
+    color: white;
+    border: 1px solid #84cc16;
+}
+
+.dark .skill-level-intermediate {
+    background: linear-gradient(135deg, #84cc16, #a3e635);
+    color: #0f172a;
+    border: 1px solid #a3e635;
+}
+
+.skill-level-beginner {
+    background: linear-gradient(135deg, #ca8a04, #eab308);
+    color: white;
+    border: 1px solid #eab308;
+}
+
+.dark .skill-level-beginner {
+    background: linear-gradient(135deg, #eab308, #facc15);
+    color: #0f172a;
+    border: 1px solid #facc15;
+}
+
+/* Grid improvements for better alignment */
+@media (min-width: 992px) {
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 30%;
+        margin: 0 1.66%;
+    }
+}
+
+/* Professional Experience Timeline Styles */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--bs-success);
+    transform: translateX(-50%);
+}
+
+.timeline-content {
+    width: 45%;
+}
+
+.timeline-left .timeline-content {
+    margin-right: auto;
+}
+
+.timeline-right .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+
+.timeline-marker-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 25px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+    }
+
+    .timeline-marker {
+        left: 0;
+        transform: none;
+    }
+}
+
+/* Simple Timeline - Leveraging Bootstrap */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--bs-success);
+    transform: translateX(-50%);
+}
+
+.timeline-content {
+    width: 45%;
+}
+
+.timeline-left .timeline-content {
+    margin-right: auto;
+}
+
+.timeline-right .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+
+.timeline-marker-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 25px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+    }
+
+    .timeline-marker {
+        left: 0;
+        transform: none;
+    }
+}
+
+/* Simple Gallery Styles using Bootstrap */
+.gallery-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-row {
+    display: flex;
+    animation: scrollLeft 25s linear infinite alternate;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-row:nth-child(even) {
+    animation: scrollRight 25s linear infinite alternate;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.gallery-row:hover {
+    animation-play-state: paused;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Simple Modal Styles */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+
+.gallery-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.gallery-modal-image {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 10px;
 }
