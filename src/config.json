@@ -3,25 +3,25 @@
     "user": {
       "name": "Ritwick Raj Makhal",
       "shortDesc": "Hi, I'm Ritwick Raj Makhal, a Full Stack Web and Android Developer 🚀",
-      "desc": "I have been Programming since I was 16 years old. I can Build apps for Android and Windows and I know languages like Python, Javascript, Typescript and Java very well. I can also design secure, fast and responsive websites with ReactJS 🔥 and Develop Custom Roms for android.",
-      "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/profile.jpg",
+      "desc": "Dynamic Software Engineer with 1+ year of open-source experience, passionate about community-driven development. Skilled in Python, SQL, HTML & CSS, with strong debugging, testing, and integration abilities. Proven track record of building efficient, user-focused solutions and improving software functionality. Eager to contribute to a collaborative team while growing expertise in modern technologies.",
+      "imgUrl": "./assets/images/profile.png",
       "education": [
         {
           "instituteName": "Khalna Rai Radha Gobinda Institution",
-          "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/krrgi.jpg",
+          "imageUrl": "./assets/images/krrgi.jpg",
           "desc": "10th passed (2019) from W.B.B.S.E board, 12th passed (2021) from W.B.C.H.S.E board",
           "gallery": [
             {
-              "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/acheivement-1.jpg"
+              "imageUrl": "./assets/images/acheivement-1.jpg"
             },
             {
-              "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/acheivement-2.jpg"
+              "imageUrl": "./assets/images/acheivement-2.jpg"
             }
           ]
         },
         {
           "instituteName": "Calcutta Institute of Technology",
-          "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/cit.jpg",
+          "imageUrl": "./assets/images/cit.jpg",
           "desc": "B.Tech. Computer Science and Engineering (2021 - Present)"
         }
       ],
@@ -31,37 +31,109 @@
           "profile": "https://github.com/ritwickrajmakhal"
         },
         {
-          "logo": "https://portfolioblobstorage.blob.core.windows.net/images/leetcode.png",
+          "logo": "./assets/images/leetcode.png",
           "profile": "https://leetcode.com/u/ritwickrajmakhal"
         },
         {
-          "logo": "https://portfolioblobstorage.blob.core.windows.net/images/linkedin.png",
+          "logo": "./assets/images/linkedin.png",
           "profile": "https://www.linkedin.com/in/ritwick-raj-makhal-017a10217"
         },
         {
-          "logo": "https://portfolioblobstorage.blob.core.windows.net/images/gmail.jpg",
+          "logo": "./assets/images/gmail.jpg",
           "profile": "ritwickrajmakhal11@gmail.com"
         }
       ],
       "skills": [
         {
-          "name": "MERN Stack",
-          "value": 50
+          "name": "HTML & CSS",
+          "value": 90
+        },
+        {
+          "name": "SQL",
+          "value": 80
+        },
+        {
+          "name": "React",
+          "value": 40
+        },
+        {
+          "name": "Git",
+          "value": 80
+        },
+        {
+          "name": "DSA (Java)",
+          "value": 75
         },
         {
           "name": "Python",
-          "value": 70
+          "value": 75
         },
         {
-          "name": "Cloud Computing (Azure)",
-          "value": 60
+          "name": "Microsoft Azure",
+          "value": 75
         },
         {
-          "name": "Android (Kotlin)",
-          "value": 50
+          "name": "Flutter",
+          "value": 35
         }
       ],
-      "resume": "https://portfolioblobstorage.blob.core.windows.net/pdfs/resume-ritwickrajmakhal.pdf"
+      "resume": "https://portfolioblobstorage.blob.core.windows.net/pdfs/resume-ritwickrajmakhal.pdf",
+      "experience": [
+        {
+          "id": 1,
+          "title": "Software Development Intern",
+          "company": "Infosys Springboard",
+          "location": "Remote",
+          "duration": "Dec 2024 — Feb 2025",
+          "type": "Internship",
+          "description": "Developed an Inventory Management System for RapidXcel Logistics using Flask, Python, and SQLAlchemy, streamlining order processing, shipment tracking, and reporting. Implemented role-based authentication, real-time inventory tracking, and analytics dashboards, enhancing logistics efficiency.",
+          "technologies": [
+            "Flask",
+            "Python",
+            "SQLAlchemy",
+            "Analytics"
+          ],
+          "startDate": "2024-12",
+          "endDate": "2025-02",
+          "current": false
+        },
+        {
+          "id": 2,
+          "title": "Open Source Contributor",
+          "company": "MindsDB",
+          "location": "Remote",
+          "duration": "Oct 2023 — Present",
+          "type": "Open Source",
+          "description": "Developed integrations tailored to community and customer needs. Fixed 30+ bugs in the MindsDB core and tested 40+ integrations through manual and automated testing. Built app integrations (Strapi, Intercom, Instatus), data source integrations (Denodo), and AI integrations (Deepseek model).",
+          "technologies": [
+            "Python",
+            "Integrations",
+            "Testing",
+            "AI/ML"
+          ],
+          "startDate": "2023-10",
+          "endDate": null,
+          "current": true
+        },
+        {
+          "id": 3,
+          "title": "Future Ready Talent Internship",
+          "company": "Microsoft",
+          "location": "Remote",
+          "duration": "Jun 2023 — Sep 2023",
+          "type": "Internship",
+          "description": "Gained expertise in Microsoft Azure services and developed cloud-based solutions using Azure. Created PortfoliAI, a chatbot specifically trained for my portfolio website.",
+          "technologies": [
+            "Microsoft Azure",
+            "Cloud Computing",
+            "AI/ML",
+            "Chatbot"
+          ],
+          "startDate": "2023-06",
+          "endDate": "2023-09",
+          "current": false
+        }
+      ]
     },
     "nav": {
       "logo": "r",
@@ -75,6 +147,10 @@
           "url": "#about"
         },
         {
+          "name": "Experience",
+          "url": "#experience"
+        },
+        {
           "name": "Portfolio",
           "url": "#portfolio"
         },
@@ -83,18 +159,22 @@
           "url": "#education"
         },
         {
-          "name": "Achievements",
-          "url": "#achievements"
+          "name": "Gallery",
+          "url": "#gallery"
         },
         {
           "name": "Contact",
           "url": "#contact"
+        },
+        {
+          "name": "AppBox",
+          "url": "https://ritwickrajmakhal.github.io/AppBox/"
         }
       ]
     },
     "portfolios": [
       {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/eventure.png",
+        "imgUrl": "./assets/images/eventure.png",
         "title": "Eventure",
         "desc": "This platform is a user-friendly web interface that simplifies event planning and management. It enables organizers to create events, send invitations with QR codes, and manage secure entry.",
         "techs": [
@@ -108,12 +188,11 @@
         ]
       },
       {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/beverages-application.png",
+        "imgUrl": "./assets/images/beverages-application.png",
         "title": "Beverages Application",
         "desc": "A website for beverage enthusiasts to explore and discover a wide range of beverages, including cocktails, mocktails, and more.",
         "techs": [
-          "Next.js",
-          "Strapi"
+          "React"
         ],
         "demoUrl": "https://beverages-application.vercel.app",
         "downloadUrl": "https://github.com/ritwickrajmakhal/Beverages-Application",
@@ -122,7 +201,7 @@
         ]
       },
       {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/portfoli-ai.png",
+        "imgUrl": "./assets/images/portfoli-ai.png",
         "title": "Portfoli AI",
         "desc": "Enhance user engagement and interactivity on your portfolio website with our AI-powered chatbot, offering personalized experiences and real-time assistance.",
         "techs": [
@@ -136,7 +215,7 @@
         ]
       },
       {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/quizai.png",
+        "imgUrl": "./assets/images/quizai.png",
         "title": "Quiz AI",
         "desc": "Your Intelligent Quiz Companion - Experience seamless, personalized quizzes powered by Gemini. Enhance engagement, test your knowledge, and discover new insights with Quiz AI.",
         "techs": [
@@ -151,21 +230,7 @@
         ]
       },
       {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/meme-share-app.png",
-        "title": "Meme share app",
-        "desc": "An Android app for endless meme entertainment with just a tap, and the ability to easily share your favorite memes.",
-        "techs": [
-          "Android",
-          "Meme API"
-        ],
-        "demoUrl": "https://www.youtube.com/embed/u33_U127kH0",
-        "downloadUrl": "https://portfolioblobstorage.blob.core.windows.net/projects/meme-share-app.apk",
-        "categories": [
-          "ANDROID DEVELOPMENT"
-        ]
-      },
-      {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/desktop-calculator.png",
+        "imgUrl": "./assets/images/desktop-calculator.png",
         "title": "Desktop Calculator",
         "desc": "A desktop calculator application for quick and efficient mathematical calculations.",
         "techs": [
@@ -173,13 +238,13 @@
           "Tkinter"
         ],
         "demoUrl": "https://www.youtube.com/embed/S4OKyELJLXo",
-        "downloadUrl": "https://portfolioblobstorage.blob.core.windows.net/projects/desktop-calculator.exe",
+        "downloadUrl": "./assets/projects/desktop-calculator.exe",
         "categories": [
           "DESKTOP DEVELOPMENT"
         ]
       },
       {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/online-music-player.png",
+        "imgUrl": "./assets/images/online-music-player.png",
         "title": "Online Music Player",
         "desc": "An interactive online music player platform offering a vast library of songs for seamless streaming.",
         "techs": [
@@ -196,7 +261,7 @@
         ]
       },
       {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/desktop-music-player.png",
+        "imgUrl": "./assets/images/desktop-music-player.png",
         "title": "Desktop Music Player",
         "desc": "A sleek and intuitive application for organizing and enjoying your favorite tunes with seamless playback and customizable features.",
         "techs": [
@@ -205,13 +270,13 @@
           "pygame mixer"
         ],
         "demoUrl": "https://www.youtube.com/embed/5MIMUIli2tM",
-        "downloadUrl": "https://portfolioblobstorage.blob.core.windows.net/projects/Music_player.zip",
+        "downloadUrl": "./assets/projects/Music_player.zip",
         "categories": [
           "DESKTOP DEVELOPMENT"
         ]
       },
       {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/food-recepie-search.png",
+        "imgUrl": "./assets/images/food-recepie-search.png",
         "title": "Food Recipe Search",
         "desc": "Your ultimate culinary companion - a Food Recipe Search website bringing you a world of delightful dishes at your fingertips.",
         "techs": [
@@ -227,7 +292,7 @@
         ]
       },
       {
-        "imgUrl": "https://portfolioblobstorage.blob.core.windows.net/images/text-utils.png",
+        "imgUrl": "./assets/images/Text-Utils.png",
         "title": "Text Utility",
         "desc": "Streamline and enhance your text with our all-in-one Text Utility website - simplifying tasks from formatting to analysis.",
         "techs": [
@@ -241,15 +306,36 @@
         ]
       }
     ],
-    "achievements": [
+    "gallery": [
       {
-        "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/hacktoberfest-2022.png"
+        "imageUrl": "./assets/images/hacktoberfest-2022.png",
+        "title": "Hacktoberfest 2022",
+        "description": "Participated in open source contributions during Hacktoberfest 2022"
       },
       {
-        "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/hacktoberfest-2023.png"
+        "imageUrl": "./assets/images/hacktoberfest-2023.png",
+        "title": "Hacktoberfest 2023",
+        "description": "Successfully completed Hacktoberfest 2023 challenge"
       },
       {
-        "imageUrl": "https://portfolioblobstorage.blob.core.windows.net/images/internship-1.png"
+        "imageUrl": "./assets/images/internship-1.png",
+        "title": "Internship Certificate",
+        "description": "Software Development Internship completion certificate"
+      },
+      {
+        "imageUrl": "./assets/images/acheivement-1.jpg",
+        "title": "Academic Achievement",
+        "description": "Recognition for academic excellence"
+      },
+      {
+        "imageUrl": "./assets/images/acheivement-2.jpg",
+        "title": "Academic Honor",
+        "description": "Another academic achievement milestone"
+      },
+      {
+        "imageUrl": "./assets/images/Piano-arduino.png",
+        "title": "Arduino Piano Project",
+        "description": "DIY Arduino-based piano project"
       }
     ]
   }

@@ -1,27 +1,7 @@
-import React from "react";
 import Card from "./Card";
-import Carousel from "./Carousel";
 
-export default function Education({
-  setModal,
-  setIframeLoaded,
-  setModalBody,
-  setModalFooter,
-  darkMode,
-  education,
-}) {
+export default function Education({ darkMode, education }) {
   const instituteCards = education.map((institute, index) => {
-    const carouselItems = institute.gallery?.map((image, index) => (
-      <div className={`carousel-item ${index === 0 && "active"}`} key={index}>
-        <img
-          onLoad={() => setIframeLoaded(true)}
-          src={image.imageUrl}
-          className="img-fluid mx-auto d-block"
-          style={{ maxHeight: "75vh" }}
-          alt={`${index}`}
-        />
-      </div>
-    ));
     return (
       <Card
         animate={false}
@@ -32,25 +12,6 @@ export default function Education({
           imgUrl: institute.imageUrl,
           desc: institute.desc,
         }}
-        footer={
-          institute.gallery ? (
-            <div className="card-footer">
-              <p
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                role={"button"}
-                className="card-text text-center text-bg-primary rounded-bottom-4"
-                onClick={() => {
-                  setModal({ title: institute.instituteName });
-                  setModalBody(<Carousel carouselItems={carouselItems} />);
-                  setModalFooter(null);
-                }}
-              >
-                <u>Find out more</u>
-              </p>
-            </div>
-          ) : null
-        }
       />
     );
   });
@@ -60,7 +21,14 @@ export default function Education({
       className={darkMode ? "dark text-bg-dark" : "light text-bg-light"}
     >
       <div className="container py-3">
-        <h1 className="text-center">Education</h1>
+        <header className="text-center mb-5">
+          <h1 className={`display-5 fw-bold ${darkMode ? 'text-light' : 'text-dark'}`}>
+            Education
+          </h1>
+          <p className={`lead ${darkMode ? 'text-light' : 'text-muted'}`}>
+            My academic journey and the institutions that shaped my knowledge
+          </p>
+        </header>
         <div className="d-flex justify-content-evenly flex-wrap">
           {instituteCards}
         </div>

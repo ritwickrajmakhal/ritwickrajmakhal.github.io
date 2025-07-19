@@ -1,3 +1,12 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /static/
+Disallow: /*.json$
+Disallow: /*.map$
+
+# Sitemap location
+Sitemap: https://ritwickrajmakhal.github.io/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

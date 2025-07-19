@@ -1,4 +1,4 @@
-export default function Navbar({ elementRef, darkMode, setDarkMode, nav }) {
+export default function Navbar({ darkMode, setDarkMode, nav }) {
   const links = nav.links.map((link, index) => (
     <li key={index} className="nav-item">
       <a className="nav-link active" aria-current="page" href={link["url"]}>
@@ -10,7 +10,6 @@ export default function Navbar({ elementRef, darkMode, setDarkMode, nav }) {
   return (
     <div>
       <nav
-        ref={elementRef}
         className={
           darkMode
             ? "navbar sticky-top navbar-expand-lg dark"

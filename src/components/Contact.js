@@ -1,5 +1,5 @@
-import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
+
 export default function Contact({ darkMode }) {
   const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_KEY);
   return (
@@ -8,7 +8,14 @@ export default function Contact({ darkMode }) {
       className={darkMode ? "dark text-bg-dark" : "light text-bg-light"}
     >
       <div className="container py-3">
-        <h1 className="text-center">Contact</h1>
+        <header className="text-center mb-5">
+          <h1 className={`display-5 fw-bold ${darkMode ? 'text-light' : 'text-dark'}`}>
+            Contact Me
+          </h1>
+          <p className={`lead ${darkMode ? 'text-light' : 'text-muted'}`}>
+            Get in touch with me
+          </p>
+        </header>
         {state.succeeded ? (
           <div className="alert alert-warning fade show mb-3" role="alert">
             Thank you for reaching out! I'll get back to you shortly.
