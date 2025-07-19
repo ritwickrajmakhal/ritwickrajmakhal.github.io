@@ -33,6 +33,8 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          REACT_APP_FORMSPREE_KEY: ${{ secrets.REACT_APP_FORMSPREE_KEY }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
