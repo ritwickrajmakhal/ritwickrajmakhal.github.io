@@ -77,7 +77,7 @@
           "value": 35
         }
       ],
-      "resume": "https://portfolioblobstorage.blob.core.windows.net/pdfs/resume-ritwickrajmakhal.pdf",
+      "resume": "./assets/pdfs/Ritwick_RAJ_MAKHAL_Software_Engineer.pdf",
       "experience": [
         {
           "id": 1,
