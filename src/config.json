@@ -308,34 +308,64 @@
     ],
     "gallery": [
       {
-        "imageUrl": "./assets/images/hacktoberfest-2022.png",
+        "imageUrl": "./assets/images/gallery/class_10th_achievement-min.jpg",
+        "title": "Class 10th Achievement",
+        "description": "Academic excellence recognition from 10th grade studies"
+      },
+      {
+        "imageUrl": "./assets/images/gallery/chemspark-2022.jpg",
+        "title": "ChemSpark 2022",
+        "description": "Participation in ChemSpark 2022 chemistry innovation event"
+      },
+      {
+        "imageUrl": "./assets/images/gallery/double_slash_hackathon-min.jpg",
+        "title": "Double Slash Hackathon",
+        "description": "Participation in Double Slash 3.0 coding hackathon event at Jadavpur University"
+      },
+      {
+        "imageUrl": "./assets/images/gallery/hacktoberfest-2022.png",
         "title": "Hacktoberfest 2022",
         "description": "Participated in open source contributions during Hacktoberfest 2022"
       },
       {
-        "imageUrl": "./assets/images/hacktoberfest-2023.png",
+        "imageUrl": "./assets/images/gallery/hacktoberfest-2023.png",
         "title": "Hacktoberfest 2023",
         "description": "Successfully completed Hacktoberfest 2023 challenge"
       },
       {
-        "imageUrl": "./assets/images/internship-1.png",
-        "title": "Internship Certificate",
-        "description": "Software Development Internship completion certificate"
+        "imageUrl": "./assets/images/gallery/hacktoberfest-2024.jpg",
+        "title": "Hacktoberfest 2024",
+        "description": "Continued open source contributions during Hacktoberfest 2024"
       },
       {
-        "imageUrl": "./assets/images/acheivement-1.jpg",
-        "title": "Academic Achievement",
-        "description": "Recognition for academic excellence"
+        "imageUrl": "./assets/images/gallery/Innovation_at_SVIST.jpg",
+        "title": "Innovation at SVIST",
+        "description": "Innovation and technology showcase event at SVIST"
       },
       {
-        "imageUrl": "./assets/images/acheivement-2.jpg",
-        "title": "Academic Honor",
-        "description": "Another academic achievement milestone"
+        "imageUrl": "./assets/images/gallery/microsoft_internship_ceritificate.png",
+        "title": "Microsoft Internship Certificate",
+        "description": "Future Ready Talent Internship completion certificate from Microsoft"
       },
       {
-        "imageUrl": "./assets/images/Piano-arduino.png",
-        "title": "Arduino Piano Project",
-        "description": "DIY Arduino-based piano project"
+        "imageUrl": "./assets/images/gallery/TechExpo_2025.jpg",
+        "title": "Tech Expo 2025",
+        "description": "Participation in Technology Exhibition 2025"
+      },
+      {
+        "imageUrl": "./assets/images/gallery/Tech_Expo_2022.jpg",
+        "title": "Tech Expo 2022",
+        "description": "Technology Exhibition 2022 participation and project showcase"
+      },
+      {
+        "imageUrl": "./assets/images/gallery/Tech_Expo_2023.jpg",
+        "title": "Tech Expo 2023",
+        "description": "Technology Exhibition 2023 participation and showcase"
+      },
+      {
+        "imageUrl": "./assets/images/gallery/Tech_Expo_2024.jpg",
+        "title": "Tech Expo 2024",
+        "description": "Technology Exhibition 2024 participation and innovation display"
       }
     ]
   }

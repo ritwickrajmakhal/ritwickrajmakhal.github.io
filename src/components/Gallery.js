@@ -28,11 +28,10 @@ export default function Gallery({ darkMode, gallery }) {
 
         {/* Two Row Horizontal Scrolling Gallery */}
         <div className="gallery-container">
-          {/* First Row - Left to Right */}
+          {/* First Row - Left to Right (First half of gallery, duplicated for seamless loop) */}
           <div className="gallery-row">
-            {/* Duplicate items multiple times for seamless loop */}
             {[...Array(3)].map((_, setIndex) =>
-              gallery.map((item, index) => (
+              gallery.slice(0, Math.ceil(gallery.length / 2)).map((item, index) => (
                 <div
                   key={`row1-set${setIndex}-${index}`}
                   className={`gallery-item card border-0 shadow-sm ${darkMode ? 'bg-dark' : 'bg-light'}`}
@@ -58,11 +57,10 @@ export default function Gallery({ darkMode, gallery }) {
             )}
           </div>
 
-          {/* Second Row - Right to Left */}
+          {/* Second Row - Right to Left (Second half of gallery, duplicated for seamless loop) */}
           <div className="gallery-row">
-            {/* Duplicate items multiple times for seamless loop */}
             {[...Array(3)].map((_, setIndex) =>
-              gallery.map((item, index) => (
+              gallery.slice(Math.ceil(gallery.length / 2)).map((item, index) => (
                 <div
                   key={`row2-set${setIndex}-${index}`}
                   className={`gallery-item card border-0 shadow-sm ${darkMode ? 'bg-dark' : 'bg-light'}`}
@@ -74,7 +72,7 @@ export default function Gallery({ darkMode, gallery }) {
                 >
                   <img
                     src={item.imageUrl}
-                    alt={item.title || `Gallery image ${index + 1}`}
+                    alt={item.title || `Gallery image ${Math.ceil(gallery.length / 2) + index + 1}`}
                     className="gallery-image card-img-top rounded"
                     loading="lazy"
                   />
@@ -97,7 +95,7 @@ export default function Gallery({ darkMode, gallery }) {
           >
             <div className="position-relative text-center">
               <button
-                className="gallery-modal-close btn btn-close btn-close-white position-absolute"
+                className="gallery-modal-close"
                 onClick={closeImageModal}
                 aria-label="Close"
               >

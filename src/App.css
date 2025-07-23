@@ -663,13 +663,13 @@ a:hover {
 
 .gallery-row {
     display: flex;
-    animation: scrollLeft 25s linear infinite alternate;
+    animation: scrollLeft 25s linear infinite;
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
 .gallery-row:nth-child(even) {
-    animation: scrollRight 25s linear infinite alternate;
+    animation: scrollRight 25s linear infinite;
 }
 
 @keyframes scrollLeft {
@@ -725,22 +725,48 @@ a:hover {
     align-items: center;
     justify-content: center;
     z-index: 1050;
+    padding: 20px;
 }
 
 .gallery-modal-close {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 0px;
+    right: 0px;
     background: none;
     border: none;
     color: white;
     font-size: 24px;
     cursor: pointer;
+    z-index: 1051;
 }
 
 .gallery-modal-image {
     max-width: 90%;
-    max-height: 80%;
+    max-height: 60vh;
     object-fit: contain;
     border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Ensure modal content container has proper spacing and layout */
+.gallery-modal .position-relative {
+    max-height: 85vh;
+    max-width: 90vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-modal-image {
+        max-height: 60vh;
+    }
+
+    .gallery-modal .position-relative {
+        padding: 30px 15px 15px;
+        max-height: 90vh;
+    }
 }
