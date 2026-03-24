@@ -13,7 +13,9 @@ export default function Contact({ darkMode }) {
     setError(null);
     setSubmitting(true);
     try {
-      const res = await fetch("/api/contact", {
+      const apiEndpoint = process.env.REACT_APP_CONTACT_ENDPOINT;
+
+      const res = await fetch(apiEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
