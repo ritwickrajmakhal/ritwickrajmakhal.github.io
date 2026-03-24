@@ -1,7 +1,7 @@
 import { sql } from "@vercel/postgres";
 import nodemailer from "nodemailer";
 
-const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || "https://ritwickrajmakhal.github.io" || "http://localhost:3000";
+const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || "https://ritwickrajmakhal.github.io";
 
 function setCors(res) {
 	res.setHeader("Access-Control-Allow-Origin", FRONTEND_ORIGIN);
