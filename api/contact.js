@@ -54,10 +54,10 @@ export default async function handler(req, res) {
 			return res.status(400).json({ error: "Invalid email address" });
 		}
 
-		// Insert into Vercel Postgres (schema: portfolio, table: contact)
+		// Insert into Vercel Postgres (schema: public, table: contact)
 		try {
 			await sql`
-				INSERT INTO portfolio.contact (name, email, message)
+				INSERT INTO contact (name, email, message)
 				VALUES (${trimmedName}, ${trimmedEmail}, ${trimmedMessage})
 			`;
 		} catch (dbErr) {
