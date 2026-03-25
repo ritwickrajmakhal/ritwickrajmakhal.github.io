@@ -366,6 +366,16 @@
         "imageUrl": "./assets/images/gallery/Tech_Expo_2024.jpg",
         "title": "Tech Expo 2024",
         "description": "Technology Exhibition 2024 participation and innovation display"
+      },
+      {
+        "imageUrl": "./assets/images/gallery/hacktoberfest-2025.jpg",
+        "title": "Hacktoberfest 2025",
+        "description": "Continued open source contributions during Hacktoberfest 2025"
+      },
+      {
+        "imageUrl": "./assets/images/gallery/Revature_Training_Certificate.jpg",
+        "title": "Revature Training Certificate",
+        "description": "Completion certificate for Revature training program"
       }
     ]
   }
